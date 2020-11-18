@@ -1,0 +1,30 @@
+@import '../../utils/colors.scss';
+
+.button {
+  background: $gradient6;
+  border-radius: 1em;
+  font-family: Roboto, sans-serif;
+  line-height: 1;
+  font-weight: 300;
+  padding: 0.5em 2rem;
+  height: auto;
+  width: auto;
+  font-size: 1rem;
+  white-space: nowrap;
+
+  &:disabled {
+    background: rgba($neutralColor4, 0.35);
+    border: 1px solid $neutralColor3;
+  }
+
+  &.textButton {
+    background: transparent;
+    color: $neutralColor2;
+  }
+
+  &.outlined {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+  }
+}

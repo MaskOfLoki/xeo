@@ -1,0 +1,47 @@
+@import '../../../../../utils/colors.scss';
+
+$borderRadius: 0.05vw;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 7.5%;
+
+  .title {
+    height: 2vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2vmin;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  .configSlider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 1vh;
+
+    .sliderLabel {
+      font-size: 1.4vmin;
+      color: white;
+      width: 80%;
+      line-height: 1.8vh;
+    }
+  }
+
+  .groupButtons {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+
+    button {
+      margin-right: 1vw;
+    }
+  }
+}

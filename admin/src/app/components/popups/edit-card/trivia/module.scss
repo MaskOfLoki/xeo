@@ -1,0 +1,172 @@
+@import "../base/module";
+@import "../../../../utils/colors.scss";
+@value groupInput, inputWrapper, characterLabel from '../../../input/module.scss';
+@value colorPicker from '../../../color-picker/module.scss';
+
+.controlWrapper {
+  @extend .baseEdit;
+  display: flex;
+  flex-direction: column;
+
+  .questionAnswer {
+    width: 50%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vw;
+    border-right: $borderWidth solid $neutralColor4;
+
+    .control {
+      display: flex;
+      flex-direction: column;
+      padding: 0vw;
+      width: 90%;
+
+      .groupInput {
+        width: 100%;
+        margin-bottom: 1vw;
+      }
+    }
+  }
+
+  .divideLine {
+    margin-top: 0.5vw;
+    margin-bottom: 0.5vw;
+    width: 95%;
+    border-top: $borderWidth solid $neutralColor4;
+  }
+
+  .divideSecondLine {
+    @extend .divideLine;
+    margin-bottom: 0.5vw;
+  }
+
+  .presetSelectWrapper {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1vw;
+    min-height: 1.6vw;
+  }
+
+  .groupAnswers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+
+    .addAnswer {
+      width: 45%;
+    }
+
+    .answer {
+      display: flex;
+      flex-direction: row;
+      width: 49%;
+      margin-bottom: 1vw;
+      position: relative;
+
+      .answerTextWrapper {
+        width: 82%;
+        .groupInput {
+          width: 100%;
+          .inputWrapper {
+            width: 100%;
+            input {
+              height: 1.4vw;
+              font-size: 0.6vw;
+            }
+          }
+
+          .characterLabel {
+            font-size: 0.6vw;
+          }
+        }
+      }
+
+      .buttonDeleteWrapper {
+        width: 1.75vw;
+        height: 1.75vw;
+        margin-left: 0.5vw;
+        display: flex;
+        align-items: center;
+        
+        .buttonDelete {
+          border-radius: 0.1vw;
+          background: url("../../../../../assets/images/icons/trash.svg") no-repeat center;
+          background-size: contain;
+          width: 1vw;
+          height: 1vw;
+        }
+      }
+
+      .correctAnswerWrapper {
+        position: absolute;
+        right: 3vw;
+        top: 1.8vw;
+        button {
+          font-size: 0.5vw;
+          height: 1.25vw;
+          width: 5vw;
+        }
+      }
+    }
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .column {
+      width: 47%;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 0.5vw;
+      min-height: 2vw;
+
+      .rowText {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 0.9vw;
+      }
+
+      .color {
+        width: 15%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .colorPicker {
+          width: 100%;
+        }
+      }
+
+      .image {
+        width: 15%;
+        color: $neutralColor3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:first-child {
+        width: 35%;
+        margin-right: 10%;
+        .rowText {
+          width: 60%;
+        }
+        .color {
+          width: 20%;
+        }
+        .image {
+          width: 20%;
+        }
+      }
+    }
+  }
+}

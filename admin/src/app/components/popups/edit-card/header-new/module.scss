@@ -1,0 +1,122 @@
+@import '../../../../utils/colors.scss';
+
+.headerNew {
+  padding-bottom: 1rem;
+  border-style: solid;
+  border-width: 5px 0 1px;
+  position: relative;
+  overflow: hidden;
+  border-color: $reactionSolidColor3;
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    transform: translateY(-50%) scaleX(2);
+    z-index: 0;
+    background: radial-gradient(circle, transparentize($reactionSolidColor3, 0.35) 0%, transparent 30%);
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+    position: relative;
+  }
+
+  .topRow {
+    @extend .row;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .fill {
+    flex: 1;
+  }
+
+  .cardIcon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .saveButton {
+    margin-right: 1rem;
+  }
+
+  .closeButton {
+    width: 16px;
+    height: 16px;
+    background: url('../../../../../assets/images/icons/close.svg') no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .nameCol {
+    width: 25%;
+  }
+
+  .stopCol {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .screenCol {
+    display: flex;
+    flex-direction: row;
+
+    > div:first-child {
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.headerNew0 {
+  border-color: $reactionSolidColor1;
+
+  .background {
+    background: radial-gradient(circle, transparentize($reactionSolidColor1, 0.35) 0%, transparent 30%);
+  }
+}
+
+.headerNew1 {
+  border-color: $reactionSolidColor2;
+
+  .background {
+    background: radial-gradient(circle, transparentize($reactionSolidColor2, 0.35) 0%, transparent 30%);
+  }
+}
+
+.headerNew2 {
+  border-color: $reactionSolidColor3;
+
+  .background {
+    background: radial-gradient(circle, transparentize($reactionSolidColor3, 0.35) 0%, transparent 30%);
+  }
+}
+
+.headerNew3 {
+  border-color: $reactionSolidColor4;
+
+  .background {
+    background: radial-gradient(circle, transparentize($reactionSolidColor4, 0.35) 0%, transparent 30%);
+  }
+}
+
+.headerNew4 {
+  border-color: $targetCardSolidColor;
+
+  .background {
+    background: radial-gradient(circle, transparentize($targetCardSolidColor, 0.35) 0%, transparent 30%);
+  }
+}

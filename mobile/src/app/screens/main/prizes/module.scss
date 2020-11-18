@@ -1,0 +1,111 @@
+@import "../../../utils/module";
+@import "../../../../fonts";
+
+.screen {
+  width: 100%;
+  height: $mainHeightPortrait;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    width: 100%;
+    font-weight: bold;
+    font-size: 6vmin;
+    margin-top: 0;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+  }
+
+  .noPrizeText {
+    @extend %generalText;
+    margin-top: 15%;
+    //font-size: 4vw;
+    //line-height: 5vw;
+    width: 70%;
+    text-align: center;
+  }
+
+  .coupon {
+    width: 80%;
+    height: 40%;
+    min-height: 40%;
+    background: no-repeat center;
+    background-size: contain;
+    margin-top: 2%;
+    cursor: pointer;
+  }
+
+  .parentcup{
+    position: relative;
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .prizecup{
+    position: absolute;
+    background-image: url('../../../../assets/images/prizes/prizecup.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 15vh;
+    width: 100%; 
+    background-position: center;
+    top: 6%;
+  }
+
+  .homebutton{
+    position: absolute;
+    width: 15vmin;
+    height: 15vmin;
+    bottom: 0;
+    padding:0px;
+    right: 10%;
+    border-radius: 50%;
+    background-image: url('../../../../assets/images/prizes/homebutton.svg');
+    border: 1px solid white !important;
+    background-size: 55% 55%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+  }
+}
+
+// desktop
+@media (min-aspect-ratio: 1/1) {
+  .screen {
+    height: $mainHeightLandscape;
+    &.hasChannelVideo{
+      width: 27%;
+      float: right;
+    }
+
+    .noPrizeText {
+      margin-top: 15%;
+      font-size: 2.5vw;
+      line-height: 4vw;
+    }
+
+    .coupon {
+      width: 80%;
+      height: 40%;
+      min-height: 40%;
+      margin: 2% 0;
+    }
+  }
+}
+
+// mobile landscape
+@media (min-aspect-ratio: 1/1) and (max-width: 1024px) {
+  .screen {
+    .noPrizeText {
+      margin-top: 5%;
+    }
+  }
+}

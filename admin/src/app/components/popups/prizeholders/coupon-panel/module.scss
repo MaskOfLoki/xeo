@@ -1,0 +1,149 @@
+@import '../../../../utils/colors.scss';
+@import '../../../../utils/index.scss';
+
+.control {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .space {
+    margin: 0 auto;
+    height: fit-content;
+  }
+
+  .header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+
+    .couponLabel {
+      margin-top: 0.4vw;
+      font-size: 0.9vw;
+      font-weight: bold;
+      color: white;
+      height: fit-content;
+    }
+
+    .couponAddBtn {
+      @extend .button;
+      margin-top: 0.25vw;
+      color: $globalSolidColor;
+      font-size: 2vw;
+      line-height: 1.25vw;
+      margin-left: 0.5vw;
+      height: fit-content;
+    }
+
+    .couponSetDropDown {
+      width: 60%;
+      height: fit-content;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      margin-top: 0.2vw;
+
+      .couponSetAddBtn {
+        @extend .button;
+        color: $globalSolidColor;
+        width: 1.2vw;
+        height: 0.8vw;
+        font-size: 1.5vw;
+        line-height: 0.75vw;
+        margin-right: 0.5vw;
+        font-weight: bold;
+      }
+
+      .couponSetEditBtn {
+        @extend .button;
+        background: $globalSolidColor;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-image: url('../../../../../assets/images/icons/edit.svg');
+        width: 1.2vw;
+        height: 0.8vw;
+        margin-right: 0.5vw;
+      }
+
+      .couponSetDeleteBtn {
+        @extend .couponSetEditBtn;
+        mask-image: url('../../../../../assets/images/icons/trash.svg');
+        margin-left: 0.5vw;
+      }
+
+      .couponSetSelect {
+        width: 100%;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 0.1vw solid $neutralColor3;
+        border-radius: 0.4vw;
+        color: $neutralColor2;
+        font-size: 0.7vw;
+        line-height: 2vw;
+        option {
+          font-size: 0.7vw;
+          font-weight: bold;
+          background: $neutralColor6;
+        }
+      }
+    }
+  }
+
+  .couponList {
+    width: 100%;
+    height: 80%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    color: white;
+
+    .couponItem {
+      @extend .button;
+      width: 23%;
+      height: 7vw;
+      margin-right: 1.5%;
+      margin-bottom: 0.5vw;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url('../../../../../assets/images/prizeholder.png');
+
+      &.selected {
+        border: 0.1vw solid $globalSolidColor;
+        box-shadow: inset 0px 0px 20vw 0px rgba(33, 171, 252, 0.68%);
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.5vw;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0.25vw;
+      background: $globalSolidColor;
+    }
+  }
+
+  .footer {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    button {
+      width: 50%;
+      margin-right: 5%;
+      font-size: 0.6vw;
+
+      &:last-child {
+        width: 45%;
+        margin-right: 0%;
+      }
+    }
+  }
+}

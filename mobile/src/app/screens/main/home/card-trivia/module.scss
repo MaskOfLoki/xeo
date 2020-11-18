@@ -1,0 +1,210 @@
+@import '../../../../utils/module';
+@import '../card-base/module.scss';
+
+.screen {
+  @extend .baseScreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 5vmin;
+  text-align: center;
+  justify-content: flex-start;
+
+  .cardInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 8vmin;
+    margin-bottom: 4vmin;
+    .question {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-size: 5vmin;
+      height: 75%;
+      user-select: none;
+    }
+  }
+
+  .cardControls {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10vmin;
+    overflow: auto;
+
+    .groupAnswers {
+      padding-top: 4vmin;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      overflow: auto;
+      overflow-x: hidden;
+      margin-bottom: 4vmin;
+
+      .box {
+        width: 75%;
+        height: 13%;
+        font-size: 4vmin;
+        font-weight: bold;
+        border-radius: 1vmin;
+      }
+
+      .answer {
+        @extend .box;
+        padding: 1%;
+        $transitionTime: 1.5s;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 7vmin;
+        cursor: pointer;
+        position: relative;
+        transition: background-color $transitionTime ease;
+        width: 70%;
+        min-height: 10vmin;
+        border: 1px solid white;
+        border-radius: 30px;
+
+        .answerCommon {
+          position: absolute;
+          width: 100%;
+          white-space: normal;
+          overflow-wrap: break-word;
+          text-align: center;
+          user-select: none;
+        }
+
+        .answerValue {
+          @extend .answerCommon;
+          white-space: inherit;
+          transition: width $transitionTime ease;
+        }
+
+        .answerPercentage {
+          @extend .answerCommon;
+          text-align: right;
+          width: 97%;
+          display: none;
+        }
+
+        .answerProgressBar {
+          // background: rgba(255, 255, 255, 0.1);
+          background: #5400c610;
+          border-radius: 30px;
+          position: absolute;
+          height: 100%;
+          z-index: 1;
+          border-radius: 1vmin;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          transition: width $transitionTime ease;
+          width: 0%;
+        }
+
+        &.selected {
+          border-color: #5400c6;
+        }
+
+        &.correct {
+          // background: #2cc923;
+          background: transparent;
+        }
+
+        &.incorrect {
+          // background: #fd0d1b;
+          background: transparent;
+        }
+
+        .badge {
+          width: 7vmin;
+          height: 7vmin;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          right: -2vmin;
+          top: -3vmin;
+        }
+
+        .right {
+          @extend .badge;
+          background-image: url(../../../../../assets/images/cards/trivia/right.png);
+        }
+        .wrong {
+          @extend .badge;
+          background-image: url(../../../../../assets/images/cards/trivia/wrong.png);
+        }
+
+        &.disabled {
+          pointer-events: none;
+        }
+
+        &.percentage {
+          .answerValue {
+            text-align: left;
+            margin-left: 5%;
+            user-select: none;
+          }
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .groupOpenResponse {
+      @extend .groupAnswers;
+      width: 75%;
+      align-items: flex-start;
+      margin: 0 auto;
+
+      .label {
+        font-size: 4vmin;
+        user-select: none;
+      }
+
+      input {
+        width: 90%;
+        font-size: 5vmin;
+      }
+    }
+
+    .buttonSubmit {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 4vmin;
+      font-weight: bold;
+      border-radius: 1vmin;
+      margin: 0 auto;
+      padding-top: 0vmin;
+      padding-bottom: 0vmin;
+      user-select: none;
+      width: 40%;
+      height: 15vmin;
+      border: 1px solid white !important;
+      border-radius: 30px;
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .screen {
+    &.showChatroom {
+      .cardInfo {
+        .question {
+          font-size: 4.5vmin;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@import '../card-base/module.scss';
+@import '../../../../../fonts';
+
+.screen {
+  @extend .baseScreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .welcomeText {
+    @extend %headingText;
+    margin-top: 6vh;
+  }
+
+  .eventText {
+    margin-top: 5%;
+    font-size: 8vw;
+  }
+
+  .logoBox {
+    margin-top: 18vh;
+    height: 6vh;
+    width: 60%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .gameLogo {
+      height: 100%;
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .eventNotStartDescription {
+    @extend %subheadingText;
+    margin-top: 1.5vh;
+    width: 80vw;
+    text-align: center;
+  }
+
+  &.showChatroom {
+    .welcomeText {
+      margin-top: 5%;
+    }
+
+    .gameLogo {
+    }
+
+    .eventText {
+      margin-top: 3%;
+    }
+  }
+}
+
+// desktop
+@media (min-aspect-ratio: 1/1) {
+  .screen {
+    .welcomeText {
+      margin-top: 3%;
+      font-size: 3.5vw;
+      width: 90%;
+      text-align: center;
+    }
+
+    .eventText {
+      margin-top: 3%;
+      font-size: 2vw;
+    }
+
+    .logoBox{
+      display: none;
+    }
+    
+    .gameLogo {
+      display: none;
+      margin-top: 0;
+      height: 35%;
+      width: 100%;
+    }
+
+    .eventNotStartDescription {
+      margin-top: 0;
+      font-size: 2vw;
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.showChatroom {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}

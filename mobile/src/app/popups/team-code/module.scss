@@ -1,0 +1,58 @@
+.popup {
+  width: 80%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+
+  .closeBar {
+    margin-top: 5vmin;
+    margin-right: 5vmin;
+    height: 5vmin;
+    display: flex;
+    flex-direction: row-reverse;
+
+    .closeButton {
+      color: white;
+      width: 5vmin;
+      background: transparent url('../../../assets/images/icons/close.svg') no-repeat center;
+      background-size: contain;
+
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  .message {
+    text-align: center;
+    font-size: 3vmin;
+    color: black;
+    height: 5vmin;
+    margin-bottom: 10vmin;
+    margin-top: 5vmin;
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 4vmin;
+  }
+
+  .button_container {
+    margin-top: 10vmin;
+    margin-bottom: 10vmin;
+
+    .button {
+      margin: 0 auto;
+      width: 40%;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import '../../../../../utils/colors.scss';
+
+$borderRadius: 0.05vw;
+
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1vw;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-bottom: 2vh;
+    color: white;
+
+    .label {
+      padding-top: 1vh;
+      padding-right: 1vw;
+      width: 30%;
+    }
+  }
+
+  .header {
+    @extend .row;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+
+    .title {
+      overflow: hidden;
+      line-height: 1;
+      text-overflow: ellipsis;
+      height: fit-content;
+      font-weight: bolder;
+      padding-right: 1vw;
+    }
+
+    .targeting {
+      font-size: smaller;
+
+      .targetingIcon {
+        color: $globalSolidColor;
+      }
+    }
+
+    .saveButton {
+      margin-left: auto;
+    }
+  }
+
+  .namePanel {
+    @extend .row;
+  }
+
+  .linkPanel {
+    @extend .row;
+  }
+
+  .pinPanel {
+    @extend .row;
+  }
+
+}

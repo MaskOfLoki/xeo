@@ -1,0 +1,172 @@
+@import '../card-base/module.scss';
+
+.screen {
+  @extend .baseScreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 5vmin;
+  text-align: center;
+  justify-content: center;
+
+  .cardInfo {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .question {
+      background: #0b224a;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-size: 5vmin;
+      height: 40%;
+      user-select: none;
+    }
+
+    .questionImage {
+      width: 100%;
+      height: 60%;
+      background: no-repeat center;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+
+  .cardControls {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+
+    .groupAnswers {
+      width: 90%;
+      height: 65%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-left: 5%;
+
+      .answer {
+        width: 40%;
+        height: 40%;
+        font-size: 5vmin;
+        border-radius: 1vmin;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 1%;
+        cursor: pointer;
+        box-sizing: border-box;
+        $transitionTime: 1.5s;
+
+        &.disabled {
+          pointer-events: none;
+        }
+
+        .answerImage {
+          width: 75%;
+          height: 70%;
+          background: no-repeat center;
+          background-size: contain;
+          position: relative;
+          display: flex;
+
+          .answerProgressBar {
+            background: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            height: 100%;
+            z-index: 1;
+            border-radius: 0vmin;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            transition: width $transitionTime ease;
+            width: 0%;
+          }
+        }
+
+        .answerLabel {
+          width: 100%;
+          height: 30%;
+          font-size: 3vmin;
+          font-weight: bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          user-select: none;
+        }
+
+        &.selected {
+          .answerImage {
+            border: white 0.5vw solid;
+          }
+        }
+
+        &.correct {
+          .answerImage {
+            border: #2cc923 0.5vw solid;
+            background-color: #2cc923;
+          }
+        }
+
+        &.incorrect {
+          .answerImage {
+            border: #fd0d1b 0.5vw solid;
+            background-color: #fd0d1b;
+          }
+        }
+
+        &.disabled {
+          pointer-events: none;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .buttonSubmit {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 75%;
+      height: 13%;
+      font-size: 4vmin;
+      font-weight: bold;
+      border-radius: 1vmin;
+      margin: 0 auto;
+      padding-top: 0vmin;
+      padding-bottom: 0vmin;
+      user-select: none;
+    }
+  }
+
+  &.hasChannelVideo {
+    .cardInfo {
+      .question {
+        font-size: 4vmin;
+      }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .screen {
+    &.showChatroom {
+      .cardInfo {
+        .question {
+          font-size: 4.5vmin;
+        }
+      }
+    }
+  }
+}

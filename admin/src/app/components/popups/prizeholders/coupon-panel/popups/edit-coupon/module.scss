@@ -1,0 +1,257 @@
+@import '../../../../../../utils/colors.scss';
+@import '../../../../../../utils/index.scss';
+@value characterLabel, groupInput  from '../../../../../input/module.scss';
+@value fileUpload, image from '../../../../../file-upload/module.scss';
+
+.popup {
+  width: 45vw;
+  height: 27.5vw;
+  background-image: $gradient4;
+  border-radius: 0.4vw;
+
+  .space {
+    margin: 0 auto;
+  }
+
+  .groupInput {
+    width: 95%;
+    input {
+      background: $neutralColor5Opacity50;
+      border-color: $neutralColor3;
+      border-width: 0.12vw;
+      font-weight: bold;
+    }
+  }
+
+  .label {
+    color: white;
+    font-size: 0.65vw;
+    margin-bottom: 0.5vw;
+  }
+
+  .toggleRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    .label {
+      margin-left: 5%;
+      margin-bottom: 0vw;
+    }
+  }
+
+  .toggle {
+    width: 0.85vw;
+    height: 0.85vw;
+    border-radius: 50%;
+    border: 0.11vw solid white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .checkIcon {
+      width: 60%;
+      height: 60%;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-image: url('../../../../../../../assets/images/icons/checkmark.svg');
+      background: $globalSolidColor;
+      display: none;
+    }
+
+    &.selected {
+      .checkIcon {
+        display: block;
+      }
+    }
+  }
+
+  .headerText {
+    height: 12.5%;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+
+    .headerTitle {
+      color: white;
+      font-size: 0.9vw;
+      text-align: center;
+      font-weight: bold;
+      margin-left: 10%;
+      width: 80%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .closeButton {
+      @extend .button;
+      margin-top: 2.5%;
+      margin-right: 2%;
+      width: 2.5%;
+      height: 0.75vw;
+      background: url('../../../../../../../assets/images/icons/close.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .mainContainer {
+    width: 85%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 7.5%;
+
+    .left {
+      width: 20%;
+      height: 100%;
+      margin-right: 10%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .couponNameInputWrapper {
+        width: 100%;
+      }
+
+      .uploadImgWrapper {
+        width: 100%;
+        margin-top: 15%;
+        height: 50%;
+
+        .fileUpload {
+          border: 0.12vw solid $neutralColor3;
+          background: $neutralColor5Opacity50;
+          border-radius: 1vw;
+          width: 95%;
+        }
+
+        .label {
+          width: 100%;
+          margin-top: 12.5%;
+          font-size: 0.6vw;
+          text-align: center;
+          color: white;
+          font-weight: bold;
+        }
+
+        .subLabel {
+          @extend .label;
+          margin-top: 2.5%;
+          font-size: 0.55vw;
+          color: $neutralColor3;
+        }
+      }
+    }
+
+    .center {
+      width: 35%;
+      height: 100%;
+      margin-right: 5%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .redemptionTimeInputRow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 10%;
+
+        .dayInput {
+          display: flex;
+          flex-direction: column;
+          width: 25%;
+          margin-right: 5%;
+        }
+
+        .hoursInput {
+          @extend .dayInput;
+        }
+
+        .minutesInput {
+          @extend .dayInput;
+          margin-right: 0%;
+        }
+
+        &.disable {
+          pointer-events: none;
+          opacity: 0.5;
+        }
+      }
+
+      .prizeLinkInputRow {
+        width: 100%;
+
+        .groupInput {
+          width: 85%;
+        }
+
+        &.disable {
+          pointer-events: none;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .right {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .toggleCustomRedeptionRow {
+        @extend .toggleRow;
+        margin-top: 17%;
+      }
+
+      .messageNotificationInputRow {
+        &.disable {
+          pointer-events: none;
+          opacity: 0.5;
+        }
+      }
+
+      .codeLettersInputRow {
+        @extend .messageNotificationInputRow;
+        margin-bottom: 10%;
+      }
+
+      .codeLengthInputRow {
+        @extend .messageNotificationInputRow;
+      }
+    }
+  }
+
+  .controls {
+    width: 75%;
+    height: 17.5%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      height: 1.75vw;
+      width: 20%;
+      font-weight: bold;
+    }
+
+    .cancel {
+      border: $globalSolidColor 0.15vw solid;
+      background-color: transparent;
+      margin-right: 5%;
+    }
+
+    .confirm {
+      background: $globalLinearGradientColorToRight;
+    }
+  }
+}

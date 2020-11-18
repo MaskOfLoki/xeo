@@ -1,0 +1,199 @@
+@import '../base/module';
+@import '../../../../utils/colors.scss';
+@value groupInput, inputWrapper, label from '../../../input/module.scss';
+@value colorPicker, picker, label from '../../../color-picker/module.scss';
+
+.controlWrapper {
+  @extend .baseEdit;
+  display: flex;
+  flex-direction: column;
+
+  .quickAddColumn {
+    width: 50%;
+    height: 16%;
+    display: flex;
+    flex-direction: column;
+    border-right: $borderWidth solid $neutralColor4;
+    
+    .groupInput {
+      width: 90%;
+
+      &:nth-child(2) {
+        margin-top: 0.5vw;
+        width: 30%;
+      }
+    }
+  }
+
+  .divideLine {
+    margin-top: 1.25vw;
+    margin-bottom: 0.64vw;
+    width: 95%;
+    border-top: $borderWidth solid $neutralColor4;
+  }
+
+  .soundButtons {
+    margin-bottom: 0.5vw;
+    .soundButton {
+      width: 5vw;
+      margin-right: 0.5vw;
+    }
+
+    .soundAddButton {
+      width: 1.8vw;
+      font-size: 1vw;
+    }
+  }
+
+  .soundPanels {
+    width: 95%;
+    .soundPanel {
+      display: flex;
+      flex-direction: column;
+
+      .muteRow {
+        width: 100%;
+        margin-bottom: 0.5vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .muteWrapper {
+          width: 65%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .muteMobileLabel {
+            font-size: 0.8vw;
+            width: 25%;
+          }
+        }
+
+        .deleteSound {
+          width: 35%;
+          button {
+            width: 7vw;
+          }
+        }
+      }
+
+      .soundInputRow {
+        margin-bottom: 1vw;
+        display: flex;
+        flex-direction: row;
+        .selectedSound {
+          width: 60%;
+          margin-right: 5%;
+          display: flex;
+          flex-direction: row;
+
+          .selectedSoundName {
+            width: 90%;
+            .groupInput {
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              .label {
+                font-size: 0.8vw;
+              }
+              .inputWrapper {
+                width: 65%;
+              }
+            }
+          }
+          .selectedSoundImage {
+            width: 2vw;
+            margin-left: 0.5vw;
+            height: 2vw;
+          }
+        }
+        .soundImage {
+          width: 35%;
+          display: flex;
+          flex-direction: row;
+          .soundImageLabel {
+            width: 55%;
+            font-size: 0.9vw;
+            height: 2vw;
+            margin-top: 0.5vw;
+          }
+          .soundImageInput {
+            width: 3vw;
+            height: 3vw;
+            background: $neutralColor5;
+            border: 0.1vw solid $neutralColor3;
+            border-radius: 0.5vw;
+            padding: 0.5vw;
+          }
+        }
+      }
+
+      .soundControlRow {
+        width: 100%;
+
+        audio {
+          width: 100%;
+          height: 1.5vw;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+  }
+
+  .presetSelectWrapper {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5vw;
+    min-height: 1.6vw;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .column {
+      width: 33%;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 0.5vw;
+      min-height: 2vw;
+
+      .color {
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .colorPicker {
+          width: 100%;
+          .label {
+            width: 75%;
+          }
+          .picker {
+            width: 1.5vw;
+            height: 1.5vw;
+          }
+        }
+      }
+
+      .image {
+        width: 15%;
+        color: $neutralColor3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.control {
+  width: 6vw;
+  height: 3vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to top, #21fc63, #058b00);
+  border-radius: 0.5vw;
+  margin-left: 1vw;
+  cursor: pointer;
+  opacity: 0.5;
+  user-select: none;
+
+  &.programmed {
+    background: linear-gradient(to top, #21abfc, #00578b);
+  }
+
+  &.selected {
+    opacity: 1;
+  }
+
+  .status {
+    margin-top: 0.2vw;
+    font-size: 0.65vw;
+    text-transform: uppercase;
+  }
+
+  .name {
+    width: 100%;
+    font-size: 0.8vw;
+    text-overflow: ellipsis;
+    height: 2vw;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .default {
+    @extend .status;
+    margin-top: 0;
+    margin-bottom: 0.2vw;
+  }
+}

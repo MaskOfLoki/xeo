@@ -1,0 +1,36 @@
+@import '../../../utils/module';
+
+.screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .cardContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Landscape
+@media (min-aspect-ratio: 1/1) {
+  .screen {
+    .videoContainer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 73%;
+      height: 73%;
+    }
+
+    .cardContainer {
+      display: flex;
+      justify-content: center;
+      &.programmed {
+        height: 100%;
+      }
+    }
+  }
+}

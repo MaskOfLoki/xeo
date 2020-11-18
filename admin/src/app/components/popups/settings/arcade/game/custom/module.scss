@@ -1,0 +1,78 @@
+@value colorPicker, label, picker from '../../../../../color-picker/module.scss';
+
+.control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .customLabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+    color: white;
+    width: fit-content;
+    white-space: nowrap;
+    margin-bottom: 1.5vw;
+    width: 70%;
+  }
+
+  .toggles,
+  .inputs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .column {
+      width: 50%;
+
+      .configSlider {
+        margin-bottom: 0.8vw;
+        display: flex;
+
+        .sliderLabel {
+          margin-left: 1vw;
+          width: 60%;
+          color: white;
+          font-size: 0.8vw;
+        }
+      }
+    }
+  }
+
+  .inputs {
+    .column {
+      .configSlider {
+        flex-direction: column;
+        .sliderLabel {
+          width: initial;
+        }
+      }
+    }
+  }
+
+  .triviaColumn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .label {
+      font-size: 0.75vw;
+      font-weight: bold;
+      color: white;
+      width: fit-content;
+      white-space: nowrap;
+      margin-bottom: 0.5vw;
+    }
+
+    select {
+      width: 50%;
+    }
+  }
+
+  .activateBtn {
+    margin-bottom: 2vw;
+    margin-top: 1vw;
+  }
+}

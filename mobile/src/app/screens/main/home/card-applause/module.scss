@@ -1,0 +1,234 @@
+@import '../card-base/module.scss';
+@import '../../../../../fonts.scss';
+
+.screen {
+  @extend .baseScreen;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 5vmin;
+  text-align: center;
+  justify-content: space-around;
+
+  & * {
+    user-select: none;
+  }
+
+  .clapIcon {
+    background: url('../../../../../assets/images/cards/applause/clap.svg') no-repeat center;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    animation: clapAnimation 3s forwards;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .dynamicClap {
+    position: absolute;
+    animation: clapAnimation 3s forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5400C6;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .cardContents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .cardText {
+      .header {
+        @extend %headingText;
+        margin-top: 10%;
+        font-size: 1.75rem;
+      }
+
+      .message {
+        margin-top: 5%;
+      }
+    }
+
+    .button {
+      width: 54vmin;
+      height: 54vmin;
+      border-radius: 50%;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      background-image: radial-gradient(#0B2D47, #00011F);
+
+      .clap {
+        position: absolute;
+        width: 40vmin;
+        height: 40vmin;
+        mask: url('../../../../../assets/images/cards/applause/clap.svg') no-repeat center;
+        mask-size: contain;
+        background: no-repeat center;
+        background-size: contain;
+        background-color: #00aef3;
+        transition: transform 0.1s;
+        user-select: none;
+      }
+
+      .counter {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        border-radius: 50%;
+        background: #00aef3;
+        font-size: 6vmin;
+        width: 15vmin;
+        height: 15vmin;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        border: #162577 solid 1vmin;
+        z-index: 1;
+        user-select: none;
+      }
+    }
+  }
+
+  .cardData {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5vmin;
+    align-items: flex-end;
+
+    .handClaps {
+      background-image: url('../../../../../assets/images/cards/applause/hand.png');
+      width: 10vmin;
+      height: 10vmin;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    #totalClaps {
+      margin-left: 2%;
+      font-size: 7vmin;
+      opacity: 1;
+      color: #01ECFC;
+    }
+
+    .clap {
+      width: 10vmin;
+      padding-top: 10vmin;
+      mask: url('../../../../../assets/images/cards/applause/clap.svg') no-repeat center;
+      mask-size: contain;
+      background: no-repeat center;
+      background-size: contain;
+      background-color: #00aef3;
+    }
+
+    span {
+      font-size: 10vmin;
+    }
+  }
+
+  &.hasChannelVideo {
+    .cardContents {
+      .button {
+        width: 45vmin;
+        height: 45vmin;
+        .clap {
+          width: 22.5vmin;
+          height: 22.5vmin;
+        }
+      }
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .screen {
+    &.showChatroom {
+      .header {
+        margin: 5% auto 3%;
+        font-size: 6vmin;
+      }
+
+      .message {
+        font-size: 4.5vmin;
+      }
+
+      .cardContents {
+        .button {
+          width: 35vmin;
+          height: 35vmin;
+
+          .clap {
+            width: 19.5vmin;
+            height: 19.5vmin;
+          }
+
+          .counter {
+            font-size: 4.5vmin;
+            width: 12vmin;
+            height: 12vmin;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Portrait
+@media (min-aspect-ratio: 1/1) {
+  .screen {
+    .cardContents {
+      //flex-direction: row;
+
+      .cardText {
+        margin: auto;
+      }
+
+      .button {
+        margin: auto;
+      }
+    }
+
+  }
+}
+
+@keyframes clapAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0.8;
+  }
+
+  40% {
+    opacity: 0.6;
+  }
+
+  60% {
+    opacity: 0.4;
+  }
+
+  80% {
+    opacity: 0.2;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}

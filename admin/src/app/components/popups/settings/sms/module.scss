@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 7.5%;
+  width: 100%;
+  max-width: 600px;
+
+  .title {
+    height: 13%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8vw;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .label {
+    color: white;
+    text-align: left;
+    font-size: 0.75vw;
+    margin-bottom: 0.5rem;
+  }
+
+  .phoneAndButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  .testButton {
+    margin-left: 1vw;
+    margin-right: 0.5vw;
+  }
+
+  .sendButton {
+    margin-top: 0.5rem;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+
+    .fill {
+      flex: 1;
+    }
+    .fitContent {
+      flex: none;
+    }
+  }
+
+  .uploadButton {
+    height: 30px;
+    width: 30px;
+    padding: 1rem;
+    border: 1px solid #6f6f74;
+    border-radius: 0.4vw;
+    margin-right: 1rem;
+  }
+
+  .upload {
+    margin-left: 1rem;
+    flex: none;
+  }
+
+  .uploadImage {
+    color: white;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .imageConstraints {
+    font-size: 0.75rem;
+    color: #6f6f74;
+    text-align: center;
+  }
+
+  .users {
+    color: #21abfc;
+    font-size: 15px;
+    margin-bottom: 2rem;
+  }
+}

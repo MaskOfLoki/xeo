@@ -1,0 +1,247 @@
+@import '../../../../utils/colors.scss';
+@import '../../../../utils/index.scss';
+
+.control {
+  width: 98%;
+  padding-right: 2%;
+  border-radius: 0.35vw;
+  display: flex;
+  margin-bottom: 1vw;
+  flex-direction: column;
+  background: $neutralColor9Opacity50;
+
+  &.selected {
+    border: 0.15vw solid $globalSolidColor;
+  }
+
+  .mainboard {
+    button {
+      @extend .button;
+      width: 9vw;
+      margin-right: 1vw;
+      border-radius: 0.35vw;
+    }
+  }
+
+  .space {
+    margin: 0 auto;
+    height: fit-content;
+  }
+
+  .header {
+    width: 100%;
+    height: 3.75vw;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 0.1vw solid $neutralColor4;
+
+    &.dropdown {
+      border-bottom: none;
+    }
+
+    .arrow {
+      @extend .button;
+      height: 1vw;
+      width: 1vw;
+      background: url('../../../../../assets/images/icons/arrow.svg') no-repeat center;
+      background-size: contain;
+      transition: transform 0.1s;
+      margin-left: 1%;
+
+      &.open {
+        transform: rotate(90deg);
+      }
+    }
+
+    .channelTitle {
+      margin-left: 2%;
+
+      .channelLabel {
+        margin-bottom: 0.25vw;
+        font-size: 0.9vw;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      .userCountLabel {
+        font-size: 0.75vw;
+      }
+    }
+
+    .dateTime {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      
+      .date {
+        margin-bottom: 0.25vw;
+        font-size: 0.75vw;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      .time {
+        font-size: 0.75vw;
+      }
+    }
+
+    .calendarBtn {
+      @extend .button;
+      background: $globalSolidColor;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-image: url('../../../../../assets/images/icons/calendar.svg');
+      width: 1.35vw;
+      height: 1.35vw;
+      margin-left: 0.75vw;
+    }
+
+    .deleteBtn {
+      @extend .calendarBtn;
+      mask-image: url('../../../../../assets/images/icons/trash.svg');
+    }
+
+    .clearBtn {
+      @extend .calendarBtn;
+      mask-image: url('../../../../../assets/images/icons/close.svg');
+    }
+  }
+
+  .main {
+    width: 95.5%;
+    padding-left: 3%;
+    padding-right: 1.5%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    &.isLoading {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .loading {
+      position: absolute;
+      border: 0.5vw solid white;
+      border-radius: 50%;
+      border-top: 0.5vw solid $globalSolidColor;
+      width: 3vw;
+      height: 3vw;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .filter {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      align-items: flex-end;
+      padding-top: 0.75vw;
+      padding-bottom: 0.75vw;
+      border-bottom: 0.1vw solid $neutralColor4;
+
+      .select {
+        width: 15%;
+        margin-right: 4%;
+
+        select {
+          width: 100%;
+          height: 1.75vw;
+          background: $neutralColor9;
+          color: $neutralColor2;
+          font-size: 0.6vw;
+          font-weight: bold;
+
+          option {
+            background: $neutralColor6;
+          }
+        }
+      }
+
+      .targetSelect {
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        margin-right: 2%;
+
+        .label {
+          color: white;
+          font-size: 0.55vw;
+          font-weight: bold;
+          margin-bottom: 0.25vw;
+        }
+
+        select {
+          width: 100%;
+          height: 1.3vw;
+          font-size: 0.5vw;
+          color: $neutralColor2;
+          
+          option {
+            background: $neutralColor6;
+          }
+        }
+      }
+
+      .cardSelect {
+        @extend .targetSelect;
+      }
+
+      .advanceSearchBtn {
+        @extend .button;
+        height: 1.6vw;
+        font-size: 0.6vw;
+        width: 5.5vw;
+        background: $globalLinearGradientColorToRight;
+      }
+
+      .sendToMainboard {
+        font-size: 1.4vw;
+        margin-left: 1vw;
+      }
+
+      .sendToMainboardInactive {
+        @extend .sendToMainboard;
+        color: gray;
+      }
+
+      .sendToMainboardActive {
+        @extend .sendToMainboard;
+        color: #d50083;
+      }
+
+      .responseSelect {
+        @extend .targetSelect;
+      }
+
+      .actionSelect {
+        @extend .select;
+        width: 20%;
+        margin-right: 0;
+      }
+    }
+  }
+}

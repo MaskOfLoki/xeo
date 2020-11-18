@@ -1,0 +1,88 @@
+@import '../../utils/colors.scss';
+
+.imageUpload {
+  width: 100%;
+  overflow: hidden;
+
+  .empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $neutralColor3;
+    font-weight: 300;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    .uploadImage {
+      background: url('../../../assets/images/icons/upload1.svg') no-repeat center;
+      background-color: $neutralColor3;
+      background-size: 50%;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+    }
+
+    &.horizontal {
+      flex-direction: row;
+
+      .uploadImage {
+        margin-bottom: 0;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .infoRow {
+    display: flex;
+    justify-content: space-between;
+
+    .fileInfo {
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: white;
+      overflow: hidden;
+      margin-right: 0.5rem;
+
+      .filename {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .filesize {
+        color: $neutralColor3;
+        font-size: 0.8em;
+      }
+    }
+    .editIcon {
+      background: url('../../../assets/images/icons/edit.svg') no-repeat center;
+      width: 1rem;
+      height: 1rem;
+      background-size: 75%;
+    }
+    .removeIcon {
+      @extend .editIcon;
+      background-image: url('../../../assets/images/icons/trash.svg');
+      margin-left: 0.5rem;
+    }
+  }
+
+  img {
+    object-fit: contain;
+    box-sizing: border-box;
+  }
+
+  &.hasBorder {
+    .empty {
+      border: 1px solid $neutralColor3;
+    }
+    img {
+      border: 1px solid $neutralColor3;
+    }
+  }
+}

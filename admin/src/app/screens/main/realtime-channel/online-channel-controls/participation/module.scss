@@ -1,0 +1,61 @@
+@import '../../../../../utils/index.scss';
+
+.control {
+  @extend .column;
+  width: 100%;
+  height: 45%;
+  margin-top: 3%;
+
+  .title {
+    height: 15%;
+    color: #00ffd7;
+    font-weight: bold;
+    font-size: 0.9vw;
+    display: flex;
+    align-items: center;
+  }
+
+  .subtitle {
+    height: 15%;
+    font-weight: bold;
+    font-size: 0.8vw;
+    display: flex;
+    align-items: center;
+  }
+
+  .row {
+    align-items: center;
+    height: 70%;
+
+    .groupBars {
+      @extend .column;
+      height: 100%;
+      flex: 3;
+      overflow-y: auto;
+    }
+
+    .groupTotal {
+      @extend .column;
+      align-items: center;
+      height: 100%;
+      flex: 1;
+
+      .icon {
+        width: 2.5vw;
+        height: 2.5vw;
+        background: url(../../../../../../assets/images/icons/user.svg) no-repeat center;
+        background-size: contain;
+        margin-bottom: 0.5vw;
+      }
+
+      .total {
+        font-size: 1vw;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.tooltipImage {
+  width: 10vw;
+}

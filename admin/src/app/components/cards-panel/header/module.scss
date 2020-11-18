@@ -1,0 +1,54 @@
+@import '../../../utils/index.scss';
+@import '../../../utils/colors.scss';
+
+.control {
+  width: 100%;
+  height: 3vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #1c1b28;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  .title {
+    font-weight: bold;
+    color: $textColor;
+    margin-left: 1vw;
+  }
+
+  button {
+    margin-left: auto;
+    margin-right: 1%;
+  }
+
+  .buttonAdd {
+    @extend .button;
+    color: #21abfc;
+    margin-left: 1vw;
+    font-size: 2vw;
+  }
+
+  .cardSetDropdown {
+    margin-left: auto;
+    margin-right: 2vw;
+    width: 15vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cardSearch {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: flex;
+    align-items: center;
+    border: none;
+    width: 1vw;
+    mask: no-repeat center;
+    mask-size: contain;
+    mask-image: url('../../../../assets/images/icons/search.svg');
+    background: $globalSolidColor;
+  }
+}

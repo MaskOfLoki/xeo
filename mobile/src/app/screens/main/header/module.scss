@@ -1,0 +1,262 @@
+@import '../../../utils/module';
+@import '../../../../fonts';
+@value avatar from '../../../components/avatar/module.scss';
+
+@mixin logo {
+  width: 7vmin;
+  padding-top: 10vmin;
+  mask: no-repeat center;
+  mask-size: contain;
+  margin-left: 6%;
+}
+@mixin logo-small {
+  width: 5vmin;
+  margin-left: 8%;
+  margin-right: 1vmin;
+}
+
+.headerContainer {
+  height: $headerHeightPortrait;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+
+  &.show {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: no-repeat center;
+  background-size: cover;
+  z-index: 101;
+  align-items: center;
+
+  .userInfoContainer {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    justify-content: center;
+    margin-left: 5%;
+    user-select: none;
+
+    .userLabelContainer {
+      display: flex;
+      flex-direction: row;
+
+      .userLabels {
+        .userPointsLabel {
+          @extend %minorText;
+          height: 5vh;
+          line-height: 5vh;
+          text-align: center;
+        }
+      }
+
+      .userValues {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1.5vmin;
+
+        .userPoints {
+          @extend %generalText;
+          height: 5vh;
+          line-height: 5vh;
+          width: 15vw;
+          border-radius: 7.5vmin;
+          text-align: center;
+          padding-left: 2.5vmin;
+          padding-right: 2.5vmin;
+        }
+      }
+    }
+  }
+
+  .hamburgerMenuContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    justify-content: flex-end;
+    margin-right: 5%;
+    width: 40vmin;
+    align-items: center;
+
+    .eventNotification {
+      cursor: pointer;
+      background: linear-gradient(to right, #21abfc 0%, #00578b 100%);
+      padding: 0.5vmin 1vmin 0.5vmin 1vmin;
+      margin-right: 3vmin;
+
+      &::before {
+        content: 'EVENT STARTED \A TAP HERE!';
+        white-space: pre-wrap;
+        display: flex;
+        text-align: center;
+        font-size: 3vmin;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+
+    .hamburgerMenu {
+      mask-image: url("data:image/svg+xml;charset=utf-8,%3Csvg id='Untitled-2' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Ctitle%3EArtboard 1%3C/title%3E%3Cg id='Layer_201' data-name='Layer%25201'%3E%3Crect width='12' height='1'/%3E%3Crect y='5' width='12' height='1'/%3E%3Crect y='10' width='12' height='1'/%3E%3C/g%3E%3C/svg%3E");
+
+      height: 7vmin;
+      width: 5vmin;
+      cursor: pointer;
+      mask-repeat: no-repeat;
+      mask-position: center;
+    }
+  }
+
+  .slidenav {
+    position: fixed;
+    top: $headerHeightPortrait;
+    right: 0;
+    width: 0;
+    height: calc(100% - #{$headerHeightPortrait});
+    overflow-x: hidden;
+    transition: 0.1s;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+
+    .subnav {
+      z-index: 101;
+    }
+
+    &.open {
+      width: 50%;
+    }
+
+    .border {
+      border-bottom: 1px solid gray;
+    }
+
+    &.subnav {
+      .entry {
+        &:first-child {
+          padding-bottom: 2.5vmin;
+        }
+      }
+    }
+
+    .entry {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      padding: 4vmin 0 4vmin 2vmin;
+      flex: none;
+
+      &:first-child {
+        padding-bottom: 8vmin;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profileLink {
+        position: relative;
+        width: 20vmin;
+        height: 20vmin;
+        max-width: 140px;
+        max-height: 140px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+        .avatar {
+          width: 100%;
+          padding-top: 100%;
+        }
+      }
+
+      .avatarLabel {
+        width: 100%;
+        text-align: center;
+        margin-top: 3vw;
+        font-size: 5vmin;
+      }
+
+      .avatarRank {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3vmin;
+
+        > span {
+          color: #ff00bd;
+          margin-left: 10px;
+        }
+      }
+
+      .homeImg {
+        @include logo;
+        mask-image: url('../../../../assets/images/icons/home.svg');
+      }
+
+      .rankImg {
+        @include logo;
+        @include logo-small;
+        mask-image: url('../../../../assets/images/icons/rank.svg');
+      }
+
+      .arcadeImg {
+        @include logo;
+        @include logo-small;
+        mask-image: url('../../../../assets/images/icons/arcade_game_icon.svg');
+      }
+
+      .chatImg {
+        @include logo;
+        mask-image: url('../../../../assets/images/icons/chatroom_icon.svg');
+      }
+
+      .prizesImg {
+        @include logo;
+        @include logo-small;
+        mask-image: url('../../../../assets/images/icons/trophy.svg');
+      }
+
+      .termsImg {
+        @include logo;
+        @include logo-small;
+        mask-image: url('../../../../assets/images/icons/terms.svg');
+      }
+
+      .backImg {
+        @include logo;
+        mask-image: url('../../../../assets/images/icons/back_arrow.svg');
+      }
+
+      span {
+        text-align: start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 7%;
+        font-size: 4vw;
+        max-width: calc(100% - 10vmin);
+
+        @media (min-width: 768px) {
+          font-size: 36px;
+        }
+      }
+    }
+  }
+}

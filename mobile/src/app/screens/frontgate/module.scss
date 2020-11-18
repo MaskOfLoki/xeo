@@ -1,0 +1,86 @@
+@import '../../utils/module';
+
+.frontGate {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+
+  .gameLogo {
+    margin-top: 5%;
+    background: url('../../../assets/images/mobile/game-logo.png') no-repeat center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 25%;
+    width: 100%;
+  }
+
+  .groupPhone {
+    @extend .groupCommon;
+    margin-bottom: 5%;
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+
+      .phoneCode {
+        font-weight: bold;
+        min-width: fit-content;
+        font-size: 4vmin;
+      }
+
+      input {
+        width: 100%;
+        margin-bottom: 0;
+        margin-left: 5%;
+      }
+    }
+  }
+
+  .infoText {
+    text-transform: uppercase;
+    margin-top: 3%;
+    font-size: 4vmin;
+    text-align: center;
+    margin-bottom: 5%;
+    width: 80%;
+  }
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+    margin-bottom: 5%;
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .frontGate {
+    .gameLogo {
+      margin-top: 5%;
+      height: 20%;
+    }
+
+    .groupPhone {
+      margin-bottom: 1%;
+
+      .row {
+        .phoneCode {
+          font-size: 1.5vmax;
+        }
+      }
+    }
+
+    .infoText {
+      margin-top: 0.5%;
+      font-size: 1.25vmax;
+      margin-bottom: 1%;
+    }
+  }
+}

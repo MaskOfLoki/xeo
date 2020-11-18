@@ -1,0 +1,63 @@
+@import '../../../../../../utils/index.scss';
+
+.control {
+  @extend .row;
+  width: 100%;
+  align-items: center;
+  height: 20%;
+  min-width: 12vw;
+
+  .label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 5.5vw;
+    font-size: 0.7vw;
+  }
+
+  .bar {
+    $height: 1vw;
+
+    margin-left: 0.5vw;
+    position: relative;
+    width: 6vw;
+    height: $height;
+    background: linear-gradient(to right, #87878c, #43434b);
+    border-radius: $height;
+
+    .fill {
+      position: absolute;
+      background: #c1c1c1;
+      height: $height;
+      border-radius: $height;
+    }
+  }
+
+  .amount,
+  .percentage {
+    color: #c1c1c1;
+    margin-left: 0.5vw;
+    font-size: 0.7vw;
+  }
+
+  .percentage {
+    font-weight: bold;
+    width: 1.5vw;
+  }
+
+  &.top {
+    .bar {
+      background: linear-gradient(to right, #008d79, #00473d);
+
+      .fill {
+        background: #00ffd7;
+        box-shadow: 0 0 0.25vw 0.1vw #00ffd7;
+      }
+    }
+
+    .amount,
+    .percentage {
+      color: #00ffd7;
+    }
+  }
+}

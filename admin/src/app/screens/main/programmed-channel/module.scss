@@ -1,0 +1,12 @@
+@import '../../../utils/index.scss';
+
+.screen {
+  @extend .column;
+  width: 96%;
+  margin-left: 2%;
+  
+  .cardPanelTimeLinePreviewRow {
+    @extend .row;
+    margin-bottom: 0.5vw;
+  }
+}

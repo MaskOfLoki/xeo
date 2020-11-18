@@ -1,0 +1,86 @@
+@import '../../../../utils/module';
+@value avatar from '../../../../components/avatar/module.scss';
+
+.screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    margin-bottom: 5.6vw;
+    text-align: center;
+    width: 28vw;
+    max-width: 180px;
+    height: 7vw;
+    max-height: 40px;
+    position: relative;
+
+    > div {
+      position: absolute;
+    }
+
+    > div:first-child {
+      width: 160%;
+      height: 240%;
+      top: -70%;
+      left: -30%;
+      border-radius: 50%;
+      background: radial-gradient(#00AAB9ff, #1086A0ee, #1A6F9089, #1A6F9080, #225B8255, #0a034b23, #0a034b22, #0a034b);
+    }
+
+    > div:last-child {
+      width: 100%;
+      height: 100%;
+      background: no-repeat center;
+      background-size: contain;
+      background-image: url('../../../../../assets/images/icons/xeo.svg');
+    }
+  }
+
+  .subTitle {
+    font-size: 5vmin;
+    margin-bottom: 11.2vw;
+    
+    @media (min-width: 768px) {
+      font-size: 36px;
+      margin-bottom: 100px;
+    }
+  }
+
+  .groupSwiper {
+    position: relative;
+    width: 50vh;
+    height: 50vh;
+
+    .groupAvatars {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    .avatar {
+      cursor: pointer;
+      box-sizing: border-box;
+      margin: 10px;
+      background-color: #020120;
+
+      &.selected {
+        border: 3px solid #01ECFC;
+        box-shadow: 0 0 8px #01ecfcd1, inset 0 0 15px #01ecfca8;
+      }
+    }
+  }
+
+  .button {
+    border-color: #707070;
+    font-size: 4.45vmin;
+    width: 30vw;
+    max-width: 180px;
+    max-height: 50px;
+    background: linear-gradient(to right, #00EFFF 0%, #002AD8 100%) !important;
+  }
+}

@@ -1,0 +1,378 @@
+@value button from '../../../../components/button/module.scss';
+@import '../card-base/module.scss';
+@import '../../../../../fonts';
+
+.screen {
+  @extend .baseScreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+
+  .micRow {
+    height: 10vh;
+    width: 88%;
+    padding-left: 14%;
+    padding-right: 14%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+    .micWrapper {
+      width: 6vh;
+      height: 6vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 6vh;
+      border: solid 1px;
+
+      .micIcon {
+        width: 6vh;
+        height: 6vh;
+        cursor: pointer;
+        background: url('../../../../../assets/images/cards/sounder/sounder-sound.svg') no-repeat center;
+        background-size: 4vh;
+        border-radius: 2vmin;
+
+        &:active {
+          transform: scale(0.9);
+        }
+
+        &.micButton {
+          background: url('../../../../../assets/images/icons/microphone.svg') no-repeat center;
+          background-size: contain;
+        }
+      }
+    }
+
+    .sounderbarWrapper {
+      width: 80%;
+      height: 5vh;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+
+      .soundbarBg {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        position: absolute;
+        border: 1px solid ;
+        border-radius: 5vh;
+        display: flex;
+        margin-top: 2vh;
+        margin-left: 5vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+
+        .soundbarSection {
+          position: relative;
+          width: calc(100% / 20);
+          margin-left: calc( 100% / 80);
+          margin-right: calc(100% / 80);
+          height: 70%;
+          top: 15%;
+          box-sizing: border-box;
+        }
+      }
+
+      .soundbar {
+        width: 80%;
+        height: 70%;
+        top: 15%;
+        margin-left: 10vw;
+        margin-right: 5vw;
+        position: relative;
+        margin-top: 0.7vh;
+
+        .bar {
+          position: absolute;
+          height: 100%;
+          background: linear-gradient(to right, green, orange, red);
+        }
+      }
+    }
+  }
+
+  .message {
+    @extend %headingText;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    width: 80%;
+    margin-top: 5vh;
+    height: 5vh;
+    font-weight: bold;
+  }
+
+  .buttonWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .countdown {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress {
+      width: 52vmin;
+      height: 52vmin;
+      transform: rotate(-90deg);
+      position: absolute;
+    }
+
+    .progressMeter,
+    .progressValue {
+      fill: none;
+    }
+
+    .progressMeter {
+      stroke: none;
+    }
+
+    .progressValue {
+      stroke-linecap: round;
+      stroke-dasharray: calc(54 * 3.142 * 2);
+      stroke-dashoffset: 0;
+      opacity: 0;
+
+
+      &.active {
+        opacity: 1;
+        animation: offsettozero 3s linear forwards;
+      }
+    }
+
+    @keyframes offsettozero {
+      to {
+        stroke-dashoffset: 339;
+      }
+      0% {
+        opacity:0;
+      }
+      1% {
+        opacity:1;
+      }
+      99% {
+        opacity:1;
+      }
+      100% {
+        opacity:0;
+      }
+    }
+
+    .micBackground {
+    }
+
+    .micButtonSound {
+      background: url('../../../../../assets/images/icons/microphone.svg') no-repeat center;
+      background-size: 80% 80%;
+      width: 40vmin;
+      height: 40vmin;
+      border-radius: 50%;
+      border: solid thin;
+      //margin-top: 5%;
+    }
+
+    .button {
+      width: 40%;
+      text-transform: uppercase;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 3vh;
+
+      .icon {
+        width: 15%;
+        margin-left: 5%;
+        height: 85%;
+        mask: no-repeat center;
+        background: white;
+        mask-size: contain;
+      }
+
+      .label {
+        @extend %subheadingText;
+        width: 80%;
+        font-size: 5.5vmin;
+        text-align: center;
+        word-break: break-all;
+      }
+    }
+  }
+
+  .sounderIcon {
+    background: no-repeat center;
+    background-size: contain;
+    position: absolute;
+    width: 7vmin;
+    height: 7vmin;
+    animation: sounderAnimation 5s forwards;
+    mask: no-repeat center;
+    background: white;
+    mask-size: contain;
+  }
+
+  &.hasChannelVideo {
+    .buttonWrapper {
+      .micButtonSound {
+        width: 40vmin;
+        height: 40vmin;
+      }
+
+      .icon {
+        height: 80%;
+      }
+
+      .label {
+      }
+    }
+
+    .soundbar {
+      width: 70%;
+    }
+  }
+
+  @keyframes sounderAnimation {
+    0% {
+      opacity: 1;
+    }
+
+    20% {
+      right: 3%;
+      opacity: 0.8;
+    }
+
+    100% {
+      right: 3%;
+      top: 0vw;
+      display: none;
+      opacity: 0;
+    }
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .screen {
+    .message {
+      margin-top: 2%;
+      margin-bottom: 0%;
+      font-size: 4vmax;
+    }
+
+    .buttonWrapper {
+      width: 90%;
+      flex-direction: row;
+      align-content: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      //height: 50%;
+
+      .micButtonSound {
+        width: 20vmax;
+        height: 20vmax;
+        margin-top: 1%;
+      }
+
+      .button {
+        width: 60%;
+        margin-left: 3%;
+        margin-right: 3%;
+        height: 20%;
+
+        .label {
+          font-size: 3vmax;
+        }
+      }
+    }
+
+    .micRow {
+      width: 70%;
+      height: 15%;
+
+      .micIcon {
+        width: 5vmax;
+        height: 5vmax;
+      }
+      .sounderbarWrapper {
+        width: 90%;
+
+        .soundbar {
+          width: 95%;
+          height: 70%;
+          top: 15%;
+          margin-left: 12vw;
+          margin-right: 5vw;
+          position: relative;
+          margin-top: 0.7vh;
+        }
+        
+        .soundbarBg {
+          padding-left: 1vw;
+          padding-right: 1vw;
+        }
+      }
+    }
+
+    
+
+    // &.hasChannelVideo:not(.showChatroom) {
+    //   padding-left: 73%;
+    //   width: 27%;
+    //   position: relative;
+    //   .message {
+    //     width: 100%;
+    //     margin-bottom: 2%;
+    //     font-size: 2.5vmax;
+    //   }
+
+    //   .buttonWrapper {
+    //     width: 100%;
+    //     align-content: center;
+    //     flex-direction: column;
+    //     flex-wrap: inherit;
+
+    //     .micButtonSound {
+    //       width: 35vmin;
+    //       height: 35vmin;
+    //     }
+    //     .button {
+    //       width: 80%;
+    //     }
+    //     .label {
+    //       font-size: 2.2vmax;
+    //     }
+    //   }
+
+    //   .micRow {
+    //     width: 45%;
+    //     height: 15%;
+    //     margin-top: 0%;
+    //     margin-left: 0%;
+    //     position: absolute;
+    //     bottom: 10%;
+    //     right: 4%;
+    //     display: flex;
+    //     flex-direction: row-reverse;
+
+    //     .sounderbarWrapper {
+    //       margin-right: 30%;
+    //       width: 45%;
+    //       height: 60%;
+    //     }
+    //   }
+    // }
+  }
+}

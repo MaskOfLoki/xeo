@@ -1,0 +1,40 @@
+@import '../../../../../utils/index.scss';
+
+.control {
+  @extend .row;
+  width: 100%;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+  align-items: center;
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .groupTimer {
+    @extend .row;
+    align-items: center;
+    margin-left: auto;
+    color: #6F6F74;
+    font-size: 0.8vw;
+    font-weight: bold;
+
+    .icon {
+      background: #6F6F74;
+      mask: url(../../../../../../assets/images/icons/countdown.svg) no-repeat center;
+      mask-size: contain;
+      width: 1.5vw;
+      height: 1.5vw;
+      margin-right: 0.5vw;
+    }
+  }
+
+  button {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 4vw;
+    border-color: #6F6F74;
+    color: #6F6F74;
+  }
+}

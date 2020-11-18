@@ -1,0 +1,159 @@
+@import '../../../../utils/colors.scss';
+@value groupTextArea from '../../../textarea/module.scss';
+
+$borderRadius: 0.05vw;
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .mainPanel {
+    width: 65%;
+    height: 100%;
+    border-right: $borderRadius $neutralColor4 solid;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8vw;
+
+    .marketingMessageLabel {
+      margin-left: 4%;
+      margin-top: 4%;
+      margin-bottom: 2%;
+      width: 50%;
+      font-size: 0.8vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .label {
+        color: white;
+        display: flex;
+        align-items: center;
+        margin-top: 0.1vw;
+        font-size: 0.8vw;
+        font-weight: bold;
+      }
+    }
+
+    .mainContent {
+      height: 90%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+
+      .left {
+        width: 50%;
+        height: 100%;
+        border-right: $borderRadius solid $neutralColor4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+
+        .message {
+          width: 90%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: 0.5vw;
+          height: 2.5vw;
+
+          .messageText {
+            width: 67.5%;
+            height: 85%;
+            color: white;
+            font-size: 0.9vw;
+            padding-left: 0.5vw;
+            padding-right: 0.5vw;
+            display: flex;
+            align-items: center;
+
+            textarea {
+              resize: none;
+            }
+
+            .groupTextArea {
+              height: 100%;
+              .messageTextArea {
+                width: 90%;
+                height: 90%;
+                padding-left: 0.1vw;
+                padding-top: 0.1vw;
+                border-radius: 0.2vw;
+              }
+            }
+          }
+
+          .image {
+            background: no-repeat center;
+            background-size: contain;
+            width: 67.5%;
+            height: 60%;
+            padding-left: 0.5vw;
+            padding-right: 0.5vw;
+          }
+
+          .buttonEdit {
+            margin-left: 2%;
+            width: 10%;
+            height: 40%;
+            mask: no-repeat center;
+            mask-size: contain;
+            mask-image: url('../../../../../assets/images/icons/edit.svg');
+            background: $globalSolidColor;
+          }
+
+          .buttonDelete {
+            @extend .buttonEdit;
+            mask-image: url('../../../../../assets/images/icons/trash.svg');
+          }
+        }
+
+        .addRow {
+          @extend .message;
+          justify-content: flex-start;
+          width: 90%;
+
+          .addMessageBtn {
+            font-size: 1.5vw;
+            display: flex;
+            align-items: center;
+            border: none;
+            width: 2vw;
+            color: $globalSolidColor;
+          }
+
+          .nonPreviewBtn {
+            width: 1.5vw;
+            height: 0.75vw;
+            border-radius: 0.2vw;
+            border-color: #707070;
+            margin-right: 2%;
+          }
+
+          .previewBtn {
+            width: 0.75vw;
+            height: 1.5vw;
+            border-radius: 0.2vw;
+            border-color: #707070;
+            margin-right: 2%;
+          }
+        }
+      }
+
+      .right {
+        @extend .left;
+        border-right: none;
+      }
+    }
+  }
+
+  .previewPanel {
+    width: 25%;
+    height: 100%;
+    margin-left: 9%;
+    margin-right: 1%;
+  }
+}

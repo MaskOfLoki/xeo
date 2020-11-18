@@ -1,0 +1,87 @@
+@import '../base/module';
+@import '../../../../utils/colors.scss';
+@value control from '../../../quick-add/thumbs/module.scss';
+@value colorPicker, picker, label from '../../../color-picker/module.scss';
+@value title, image, column as fileUploadColumn from '../../../file-upload/module.scss';
+
+.controlWrapper {
+  @extend .baseEdit;
+  display: flex;
+  flex-direction: column;
+  z-index: 80;
+
+  .filtersColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+    height: 35%;
+    border-right: $borderWidth solid $neutralColor4;
+
+    .groupFilters {
+      margin-top: 2vmin;
+    }
+  }
+
+  .divideLine {
+    margin-top: 1.5vw;
+    width: 95%;
+    margin-bottom: 1vw;
+    border-top: $borderWidth solid $neutralColor4;
+  }
+
+  .presetSelectWrapper {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    min-height: 1.6vw;
+    margin-bottom: 1vw;
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1vw;
+    min-height: 2vw;
+
+    .color {
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      .colorPicker {
+        width: 100%;
+
+        .label {
+          width: 75%;
+        }
+      }
+    }
+
+    .imageUpload {
+      width: 50%;
+      color: $neutralColor3;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      .fileUploadColumn {
+        min-width: 65%;
+        margin-right: 0vw;
+      }
+
+      .title {
+        width: 75%;
+      }
+
+      .image {
+        width: 2vw;
+        margin-left: 12.5%;
+      }
+    }
+  }
+}

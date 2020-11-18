@@ -1,0 +1,158 @@
+@import "../base/module";
+@import "../../../../utils/colors.scss";
+@value groupInput, inputWrapper from '../../../input/module.scss';
+@value colorPicker from '../../../color-picker/module.scss';
+
+.controlWrapper {
+  @extend .baseEdit;
+  display: flex;
+  flex-direction: column;
+
+  .questionAnswer {
+    width: 50%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 1vw;
+    border-right: $borderWidth solid $neutralColor4;
+
+    .questionTextWrapper {
+      width: 82%;
+
+      .groupInput {
+        width: 100%;
+
+        .inputWrapper {
+          width: 100%;
+        }
+      }
+    }
+
+    .questionImageWrapper {
+      width: 1.75vw;
+      height: 1.75vw;
+      margin-left: 0.5vw;
+    }
+  }
+
+  .divideLine {
+    margin-top: 1.5vw;
+    margin-bottom: 1.5vw;
+    width: 95%;
+    border-top: $borderWidth solid $neutralColor4;
+  }
+
+  .divideSecondLine {
+    @extend .divideLine;
+    margin-top: 0vw;
+    margin-bottom: 1vw;
+  }
+
+  .presetSelectWrapper {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1vw;
+    min-height: 1.6vw;
+  }
+
+  .groupAnswers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    .answer {
+      display: flex;
+      flex-direction: row;
+      width: 49%;
+      margin-bottom: 1.5vw;
+      position: relative;
+
+      .answerTextWrapper {
+        width: 82%;
+
+        .groupInput {
+          width: 100%;
+
+          .inputWrapper {
+            width: 100%;
+          }
+        }
+      }
+
+      .answerImageWrapper {
+        width: 1.75vw;
+        height: 1.75vw;
+        margin-left: 0.5vw;
+      }
+
+      .correctAnswerWrapper {
+        position: absolute;
+        right: 3vw;
+        top: 2.25vw;
+        button {
+          font-size: 0.5vw;
+          height: 1.25vw;
+          width: 5vw;
+        }
+      }
+    }
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .column {
+      width: 47%;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 0.5vw;
+      min-height: 2vw;
+
+      .rowText {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 0.9vw;
+      }
+
+      .color {
+        width: 15%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .colorPicker {
+          width: 100%;
+        }
+      }
+
+      .image {
+        width: 15%;
+        color: $neutralColor3;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:first-child {
+        width: 35%;
+        margin-right: 10%;
+        .rowText {
+          width: 60%;
+        }
+        .color {
+          width: 20%;
+        }
+        .image {
+          width: 20%;
+        }
+      }
+    }
+  }
+}

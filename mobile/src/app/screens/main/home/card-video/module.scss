@@ -1,0 +1,251 @@
+@import '../card-base/module.scss';
+@import '../../../../../fonts.scss';
+
+.screen {
+  @extend .baseScreen;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 5vmin;
+  text-align: center;
+  position: relative;
+
+  .cardContents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 100%;
+
+    .message {
+      @extend %subheadingText;
+      margin-top: 10%;
+      height: 15%;
+      width: 75%;
+      margin-bottom: 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+
+    .videoContents {
+      position: relative;
+      height: 75%;
+
+      .video {
+        width: 100%;
+        height: 100%;
+        background: no-repeat center;
+        background-size: contain;
+        cursor: pointer;
+
+        video {
+          width: 100%;
+          height: 100%;
+        }
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          min-height: 100%;
+        }
+      }
+
+      @mixin button($name) {
+        // @extend .button;
+        background: url('../../../../../assets/images/icons/' + $name + '.svg') no-repeat center;
+        position: absolute;
+        background-size: contain;
+        width: 2vw;
+        height: inherit;
+        margin-top: 0.5vw;
+        left: calc(50% - 5vw);
+        top: calc(50% - 5vw);
+      }
+    
+      .buttonPlay {
+        @include button('play');
+        width: 10vw;
+        height: 10vw;
+      }
+    
+      .buttonPause {
+        @include button('pause');
+        transform: scale(1.5);
+        width: 10vw;
+        height: 10vw;
+      }
+
+      .sound {
+        position: absolute;
+        background: no-repeat center;
+        background-size: contain;
+        width: 5vw;
+        height: 5vw;
+        bottom: 5vw;
+        right: 1vw;
+        cursor: pointer;
+
+        &:active {
+          transform: scale(0.9);
+        }
+        
+        
+        &.unmute {
+          background-image: url('../../../../../assets/images/icons/mute.svg');
+        }
+    
+        &.mute {
+          background-image: url('../../../../../assets/images/icons/unmute.svg');
+        }
+      }
+    }
+  }
+
+  .cardExtra {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    .shareButtonContainer {
+      display: flex;
+      @mixin button($name) {
+        background: url('../../../../../assets/images/icons/' + $name + '.svg') no-repeat center;
+        background-size: contain;
+        width: 8vw;
+        height: 8vw;
+        margin: 0 4vw;
+      }
+
+      .facebook {
+        @include button('facebook');
+      }
+      .twitter {
+        @include button('twitter');
+      }
+      .instagram {
+        @include button('instagram');
+      }
+    }
+
+    // .message {
+    //   font-size: 4vmin;
+    //   font-weight: bold;
+    //   margin-bottom: 2%;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   user-select: none;
+    // }
+
+    .micRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 3%;
+
+      .buttonAction {
+        width: 40%;
+      }
+    }
+    .buttonShare {
+      width: 45%;
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .screen {
+    &.showChatroom {
+      .message {
+        font-size: 5vmin;
+      }
+    }
+  }
+}
+
+// landscape
+@media (min-aspect-ratio: 1/1) {
+  .screen {
+    width: 70%;
+    .cardContents {
+      //flex-direction: row-reverse;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 50%;
+      margin-bottom: 5%;
+
+      // .message {
+
+      //   height: fit-content;
+      //   //width: 45%;
+      // }
+
+      .videoContents {
+        width: 100%;
+        height: 95%;
+        .buttonPlay, .buttonPause {
+          left: calc(50% - 2vw);
+          top: calc(50% - 2vw);
+          width: 4vw;
+          height: 4vw;
+        }
+
+        .sound {
+          width: 2vw;
+          right: -2.5vw;
+          bottom: 0;
+        }
+      }
+    }
+
+    .cardExtra {
+      margin: 0px;
+      font-size: 1.125rem;
+      .micRow {
+        width: 90%;
+        margin-bottom: 1%;
+
+        .buttonAction {
+          width: 40%;
+          height: 4vmin;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .buttonShare {
+        width: 20%;
+      }
+      
+      .shareButtonContainer {
+        display: flex;
+        @mixin button($name) {
+          width: 3vw;
+          height: 3vw;
+          margin: 0 3vw;
+        }
+  
+        .facebook {
+          @include button('facebook');
+        }
+        .twitter {
+          @include button('twitter');
+        }
+        .instagram {
+          @include button('instagram');
+        }
+      }
+    }
+  }
+}

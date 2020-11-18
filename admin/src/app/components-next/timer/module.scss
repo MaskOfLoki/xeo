@@ -1,0 +1,83 @@
+@import '../../utils/colors.scss';
+
+.timer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  input {
+    border: none;
+    border-radius: 0;
+    background: none;
+    padding: 0.25rem;
+    outline: none;
+    width: 100% !important;
+    color: white;
+    font-size: 1rem;
+    font-family: Roboto, sans-serif;
+
+    &.left {
+      text-align: right;
+    }
+  }
+
+  .inputRow {
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid white;
+
+    &.focused .border {
+      width: 100%;
+      box-shadow: 0 0 0.25rem 0 $inputControlColor;
+    }
+  }
+
+  .separator {
+    margin: 0.125rem 0.25rem 0;
+  }
+
+  .border {
+    width: 0;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    transition: width 100ms linear;
+    background-color: $inputControlColor;
+  }
+
+  .clockIcon {
+    background: url('../../../assets/images/icons/countdown.svg') no-repeat center;
+    background-size: contain;
+    height: 1rem;
+    width: 1rem;
+    flex: none;
+    margin-left: 0.25rem;
+  }
+
+  &.disabled {
+    .clockIcon {
+      opacity: 0.5;
+    }
+    .inputRow {
+      border-bottom-color: $neutralColor3;
+    }
+    input {
+      color: $neutralColor3;
+    }
+  }
+
+  &.small {
+    width: 80%;
+
+    input {
+      font-size: 0.8em;
+    }
+    .clockIcon {
+      width: 0.8em;
+      height: 0.8em;
+    }
+    .separator {
+      margin: 0;
+    }
+  }
+}

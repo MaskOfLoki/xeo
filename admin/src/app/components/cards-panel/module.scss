@@ -1,0 +1,58 @@
+@import '../../utils/index.scss';
+@value cardWrapper from '../card/module.scss';
+
+.control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #13131f;
+  border-radius: 10px;
+  z-index: 1;
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .groupCards {
+    width: 98%;
+    margin-left: 1%;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    height: 37vh;
+    max-height: 37vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    align-content: flex-start;
+
+    &:focus {
+      outline-width: 0;
+    }
+  }
+
+  .previewToggle {
+    margin-left: 2%;
+    height: 1.5vw;
+    margin-bottom: 1%;
+    display: flex;
+    align-items: center;
+
+    .previewBtn {
+      width: 1vw;
+      height: 1.5vw;
+      background: url('../../../assets/images/icons/card-non-preview.svg') no-repeat center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      border: none;
+      border-radius: 0;
+
+      &.selected {
+        background: url('../../../assets/images/icons/card-preview.svg') no-repeat center;
+        background-size: contain;
+      }
+    }
+  }
+}

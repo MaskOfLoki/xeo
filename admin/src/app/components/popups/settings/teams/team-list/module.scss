@@ -1,0 +1,85 @@
+@import '../../../../../utils/colors.scss';
+@import '../../../../../utils/index.scss';
+
+$borderRadius: 0.05vw;
+
+.mainContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    padding-left: 2vw;
+
+
+    .label {
+      font-size: 0.9vw;
+      color: #4d4d4e;
+      height: fit-content;
+    }
+
+    .addButton {
+      @extend .button;
+      color: $globalSolidColor;
+      font-size: 1.7vw;
+      line-height: 1.25vw;
+      margin-left: auto;
+      margin-right: 2vw;
+      height: fit-content;
+    }
+  }
+
+  .teamItemPanel {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 2vw;
+    background: inherit;
+    cursor: pointer;
+    user-select: none;
+
+    &.active {
+      background: $neutralColor5;
+      border-left: 3px solid $globalSolidColor;
+    }
+    &:hover {
+      background: $neutralColor4;
+    }
+
+
+    .teamItemLabel {
+      font-size: 0.9vw;
+      font-weight: lighter;
+      color: lightgray;
+      height: fit-content;
+      overflow: hidden;
+      line-height: 1;
+      text-overflow: ellipsis;
+    }
+
+    .button {
+      margin-left: 2%;
+      width: 10%;
+      height: 80%;
+      mask: no-repeat center;
+      mask-size: contain;
+      background: $globalSolidColor;
+      margin-left: auto;
+      margin-right: 2vw;
+    }
+
+    .buttonDelete {
+      @extend .button;
+      width: 10px;
+      height: 20px;
+      mask-image: url('../../../../../../assets/images/icons/trash.svg');
+    }
+
+  }
+
+}

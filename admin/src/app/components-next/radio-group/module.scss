@@ -1,0 +1,54 @@
+@import '../../utils/colors.scss';
+
+.radiogroup {
+  display: flex;
+  flex-direction: column;
+
+  &.horizontal {
+    flex-direction: row;
+  }
+
+  .radio {
+    font-size: 1rem;
+    color: white;
+    display: grid;
+    grid-gap: 0.5em;
+    margin: 0.25em;
+    grid-template-columns: min-content auto;
+    align-items: center;
+
+    &.checked .radioLabel {
+      font-weight: 500;
+    }
+  }
+
+  .radioInput {
+    display: flex;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+
+      &:checked + .radioControl {
+        background-color: white;
+        border: 0.375em solid $inputControlColor;
+        box-shadow: 0 0 0.5em 0 $inputControlColor;
+      }
+    }
+  }
+
+  .radioControl {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    border: 1px solid $neutralColor2;
+    box-sizing: border-box;
+  }
+
+  .radioLabel {
+    line-height: 1;
+    font-weight: 300;
+  }
+}

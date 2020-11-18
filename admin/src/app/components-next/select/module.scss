@@ -1,0 +1,29 @@
+@import '../../utils/colors.scss';
+
+.select {
+  position: relative;
+
+  select {
+    border: none;
+    padding: 0 1rem 0 0;
+    font-size: 1rem;
+    color: white;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    width: 100%;
+
+    &:focus + .border {
+      width: 100%;
+    }
+  }
+
+  .border {
+    width: 0;
+    height: 1px;
+    background: $inputControlColor;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 0 0 0.25em 0 $inputControlColor;
+    transition: width 200ms linear;
+  }
+}

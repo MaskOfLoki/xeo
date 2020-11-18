@@ -1,0 +1,35 @@
+@import '../../../../utils/colors.scss';
+
+.stopSettings {
+  display: flex;
+  justify-content: center;
+
+  .autoTimeout {
+    padding-left: 2em;
+  }
+
+  .censusUserCount {
+    padding-left: 2em;
+    position: relative;
+    display: flex;
+  }
+
+  .col {
+    width: 20%;
+    min-width: 115px;
+  }
+
+  .userIcon {
+    background: url('../../../../../assets/images/icons/user.svg') no-repeat center;
+    background-size: contain;
+    height: 0.8rem;
+    width: 0.8rem;
+    flex: none;
+    margin-left: 0.25rem;
+    margin-top: 0.4rem;
+
+    &.disabled {
+      opacity: 0.6;
+    }
+  }
+}

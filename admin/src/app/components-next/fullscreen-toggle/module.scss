@@ -1,0 +1,36 @@
+@import '../../utils/colors.scss';
+
+.fullscreenToggle {
+  display: flex;
+  font-size: 1rem;
+  cursor: pointer;
+
+  .fullscreenLabel {
+    font-weight: 300;
+    color: $neutralColor3;
+    margin-left: 0.5em;
+    min-width: 3.5em;
+
+    .small {
+      font-size: 0.75em;
+    }
+  }
+
+  .fullscreenImage {
+    width: 1.8em;
+    height: 3em;
+    background: url('../../../assets/images/icons/fullscreen.svg') no-repeat center;
+    background-size: 2em 3em;
+  }
+
+  &.selected {
+    .fullscreenImage {
+      background: url('../../../assets/images/icons/fullscreen-selected.svg') no-repeat center;
+      background-size: 3em 4em;
+    }
+    .fullscreenLabel {
+      color: white;
+      font-weight: 500;
+    }
+  }
+}

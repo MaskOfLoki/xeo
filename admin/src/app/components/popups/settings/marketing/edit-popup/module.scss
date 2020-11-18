@@ -1,0 +1,132 @@
+@import '../../../../../utils/colors.scss';
+@value fileUpload from '../../../../file-upload/module.scss';
+
+$borderRadius: 0.05vw;
+
+.control {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  background: $gradient4;
+  color: white;
+  border-radius: 0.5vw;
+  overflow: hidden;
+  align-items: center;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 3vw;
+
+    span {
+      margin-left: 10%;
+      width: 80%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.8vw;
+      margin-top: 1.5vw;
+    }
+
+    .closeButton {
+      width: 10%;
+      height: 25%;
+      background: url('../../../../../../assets/images/icons/close.svg') no-repeat center;
+      background-size: contain;
+
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  .content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .rowTextRow {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.25vw;
+    }
+
+    .rowFileUploadRow {
+      @extend .rowTextRow;
+      margin-bottom: 0.5vw;
+      height: 6vw;
+      border: $borderRadius * 2 $neutralColor3 solid;
+      min-height: 6vw;
+    }
+
+    .redirectURLRow {
+      @extend .rowTextRow;
+
+      .title {
+        font-size: 0.9vw;
+        margin-bottom: 0.3vw;
+      }
+
+      .subTitle {
+        font-size: 0.7vw;
+        color: $neutralColor2;
+        text-align: center;
+      }
+    }
+
+    .clockRow {
+      @extend .rowTextRow;
+      flex-direction: row;
+      align-items: center;
+
+      input {
+        width: 15%;
+      }
+
+      .clockIcon {
+        background: url('../../../../../../assets/images/icons/countdown.svg') no-repeat center;
+        background-size: contain;
+        height: 1.3vw;
+        width: 1.2vw;
+        margin-top: 0.2vw;
+        margin-bottom: 0.25vw;
+        margin-left: 0.5vw;
+      }
+      
+      .title {
+        margin-left: 0.3vw;
+        font-size: 0.7vw;
+      }
+    }
+
+    .modeButtonRow {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75vw;
+      margin-top: 1vw;
+
+      button {
+        &:first-child {
+          margin-right: 5%;
+        }
+      }
+    }
+
+    .saveButton {
+      background: $globalLinearGradientColorToRight;
+      margin-bottom: 1.5vw;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.control {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .cardSetAdd {
+    border-radius: 0.1vw;
+    background-size: contain;
+    width: 1vw;
+    height: 100%;
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5vw;
+    color: #21abfc;
+    cursor: pointer;
+  }
+
+  .cardSetEdit {
+    border-radius: 0.1vw;
+    background: #21abfc;
+    -webkit-mask: no-repeat center;
+    -webkit-mask-size: contain;
+    -webkit-mask-image: url('../../../../../assets/images/icons/edit.svg');
+    mask-image: url('../../../../../assets/images/icons/edit.svg');
+    background-size: contain;
+    width: 1vw;
+    height: 1vw;
+    margin: 0 1vw;
+    cursor: pointer;
+  }
+
+  .cardSetDelete {
+    border-radius: 0.1vw;
+    background: #21abfc;
+    -webkit-mask: no-repeat center;
+    -webkit-mask-size: contain;
+    -webkit-mask-image: url('../../../../../assets/images/icons/trash.svg');
+    mask-image: url('../../../../../assets/images/icons/trash.svg');
+    background-size: contain;
+    width: 1vw;
+    height: 1vw;
+    margin-left: 1vw;
+    cursor: pointer;
+  }
+
+  #cardSetSelect {
+    width: 70%;
+    color: #C1C1C1;
+  }
+}

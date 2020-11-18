@@ -1,0 +1,405 @@
+@import '../../../utils/module.scss';
+
+.screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: no-repeat center;
+  background-size: cover;
+
+  .groupTabs {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 10vmin;
+    font-weight: bold;
+    font-size: 5vmin;
+
+    .tab {
+      width: 50%;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 4.5vmin;
+      background-color: #ffffff33;
+
+      &.active {
+        border-bottom: 1vmin solid;
+      }
+    }
+  }
+
+  .title {
+    width: 100%;
+    font-weight: bold;
+    font-size: 6vmin;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+  }
+
+  .chatFeed {
+    padding-top: 2%;
+    height: 83%;
+    width: 85%;
+    margin-bottom: 5%;
+    overflow-y: auto;
+    padding-left: 1%;
+    padding-right: 1%;
+    scrollbar-width: none;
+
+    .reactionPanel {
+      width: 90%;
+      display: none;
+
+      .reactionPanelBar {
+        width: 40%;
+        max-height: 3vmax;
+        border-radius: 1vmax;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background-color: rgb(0, 0, 46);
+        display: flex;
+        justify-content: space-around;
+        padding: 1% 2%;
+
+        .reactionImage {
+          object-fit: contain;
+          cursor: pointer;
+          width: 15%;
+          user-select: none;
+        }
+      }
+    }
+
+    .reactionContainer {
+      display: flex;
+      max-height: 4vmax;
+      margin-top: -1vmax;
+      margin-left: 1vmax;
+
+      .reactionBarItem {
+        display: flex;
+        margin: 0 0.5vmax;
+
+        .reactionBarImage {
+          object-fit: contain;
+          cursor: pointer;
+          max-width: 2.4vmax;
+        }
+
+        .reactionBarCount {
+          font-size: 3.5vmin;
+          color: white;
+          display: none;
+          padding-top: 0.1vmax;
+          margin-left: 0.5vmax;
+        }
+
+        .active {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .active {
+      display: flex;
+      justify-content: center;
+    }
+
+    .chatMessage {
+      min-height: 2vmax;
+      height: fit-content;
+      display: flex;
+      margin-bottom: 1vmax;
+      justify-content: center;
+      user-select: none;
+
+      .avatarContainer {
+        height: 6vmax;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        margin: 0 1vmax;
+        user-select: none;
+
+        .chatAvatar {
+          width: 100%;
+          height: 4.5vmax;
+          width: 4.5vmax;
+          border-radius: 50%;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          user-select: none;
+        }
+
+        .username {
+          width: 100%;
+          height: 2vmax;
+          text-align: center;
+          font-size: 2vmin;
+          margin-bottom: 2px;
+          user-select: none;
+        }
+      }
+
+      .messageContainer {
+        height: 100%;
+        max-width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 1vmax;
+        flex-grow: 1;
+        user-select: none;
+
+        .messageHeader {
+          display: flex;
+          align-items: flex-end;
+
+          .username {
+            text-align: center;
+            font-size: 2.7vmin;
+            margin-right: 1vw;
+          }
+
+          .timeStamp {
+            height: 20%;
+            text-align: left;
+            font-size: 2.5vmin;
+          }
+        }
+
+        .message {
+          padding: 1vmax;
+          flex: 1;
+          min-height: 2vmax;
+          font-size: 4.5vmin;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          background: #1b678999;
+          user-select: none;
+        }
+
+        .otherUser {
+          background: #00183699;
+        }
+
+        .timeStamp {
+          display: none;
+          width: 100%;
+          height: 20%;
+          text-align: left;
+          font-size: 2vmin;
+          user-select: none;
+        }
+      }
+
+      .chatSpacer {
+        height: 100%;
+        flex: 0.65;
+        user-select: none;
+      }
+    }
+
+    .sameUser {
+      .messageContainer {
+        .messageHeader {
+          display: none;
+        }
+      }
+      .avatarContainer {
+        height: 4.5vmax;
+        visibility: hidden;
+      }
+    }
+  }
+  
+  ::placeholder {
+    /* Chrome/Opera/Safari */
+    color: gray;
+  }
+
+  .controlContainer {
+    height: 15%;
+    max-height: 10vmin;
+    border-radius: 1vmin;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 3vmin;
+
+    .chatInputContainer {
+      max-width: calc(100% - 10vmin);
+      height: 100%;
+      flex-grow: 1;
+
+      .chatInput {
+        height: 100%;
+        width: 100%;
+        font-size: 4vmin;
+        border-radius: 1vmin;
+        padding: 0 1vmin;
+        border: none;
+        border-bottom: 0.9vmin solid white;
+        display: block;
+        font-size: 5vmin;
+        background: transparent;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .chatButton {
+      height: 6vmin;
+      max-width: 10vmin;
+      min-width: 10vmin;
+      flex: 1;
+      mask: url('../../../../assets/images/icons/chatroom_icon.svg') no-repeat center;
+      mask-size: 100% 100%;
+      border-radius: 1vmin;
+      margin-left: 3vmin;
+      background: #01ecfc;
+
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.4;
+      }
+    }
+
+    .bannedMessage {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      font-size: 5vmin;
+    }
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .screen {
+    .chatFeed {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .screen {
+    &.hasChannelVideo {
+      width: 100%;
+
+      .chatInput {
+        width: 75%;
+      }
+
+      .chatFeed {
+        .chatMessage {
+          .messageContainer {
+            .message {
+              font-size: 3vmin;
+            }
+          }
+        }
+      }
+    }
+
+    .chatFeed {
+      height: 65%;
+      margin-bottom: 1%;
+      overflow-x: hidden;
+    }
+
+    &.showChatroom {
+      margin-top: 1vmax;
+      padding-left: 5%;
+      width: 90%;
+
+      .chatFeed {
+        .chatMessage {
+          .avatarContainer {
+            margin-top: 1vmin;
+            height: 9vmin;
+            margin-left: unset;
+            .chatAvatar {
+              height: 9vmin;
+            }
+
+            .username {
+              font-size: 1.2vmin;
+            }
+          }
+
+          .messageContainer {
+            .message {
+              padding: 1vmax;
+              min-height: 2vmax;
+              font-size: 3vmin;
+            }
+            .username {
+              font-size: 2vmin;
+              height: 2vmin;
+            }
+
+            .reactionContainer {
+              display: flex;
+              max-height: 3vmax;
+              margin-top: -1vmax;
+              margin-left: 1vmax;
+
+              .reactionBarItem {
+                display: flex;
+                margin: 0 0.2vmax;
+
+                .reactionBarImage {
+                  object-fit: contain;
+                  cursor: pointer;
+                  max-width: 1.5vmax;
+                }
+
+                .reactionBarCount {
+                  font-size: 2.5vmin;
+                  color: white;
+                  display: none;
+                  padding-top: 0.1vmax;
+                  margin-left: 0.2vmax;
+                }
+
+                .active {
+                  display: flex;
+                  justify-content: center;
+                }
+              }
+            }
+
+            .timeStamp {
+            }
+          }
+        }
+      }
+
+      .chatInput {
+        font-size: 3vmin;
+      }
+    }
+  }
+}

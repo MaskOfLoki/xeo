@@ -1,0 +1,33 @@
+@import '../../../../utils/index.scss';
+
+.control {
+  @extend .row;
+  justify-content: space-between;
+  margin-top: 1vw;
+  margin-left: 1vw;
+  width: 100%;
+
+  .column {
+    width: 30%;
+
+    .title {
+      color: white;
+      font-weight: bold;
+      font-size: 0.8vw;
+    }
+
+    .buttonAddStream {
+      @extend .row;
+      @extend .button;
+      font-size: 0.8vw;
+      color: white;
+      align-items: center;
+
+      .plus {
+        color: #21abfc;
+        margin-left: 0.5vw;
+        font-size: 2vw;
+      }
+    }
+  }
+}

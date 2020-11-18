@@ -1,0 +1,426 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/IChannel",
+    "definitions": {
+        "IChannel": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "media": {
+                        "$ref": "#/definitions/Media"
+                },
+                "showChatroom": {
+                    "type": "boolean"
+                },
+                "showMedia": {
+                    "type": "boolean"
+                },
+                "cards": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ICard"
+                    }
+                },
+                "cardSets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ICardSet"
+                    }
+                },
+                "type": {
+                    "$ref": "#/definitions/ChannelType"
+                },
+                "timeline": {
+                    "$ref": "#/definitions/ITimeline"
+                },
+                "online": {
+                    "type": "boolean"
+                },
+                "synced": {
+                    "type": "boolean"
+                },
+                "deleted": {
+                    "type": "boolean"
+                },
+                "isPreview": {
+                    "type": "boolean"
+                },
+                "showUserCount": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "cards",
+                "type"
+            ],
+            "additionalProperties": false
+        },
+        "ICard": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/CardType"
+                },
+                "startTime": {
+                    "type": "number"
+                },
+                "status": {
+                    "$ref": "#/definitions/CardStatus"
+                },
+                "stopMode": {
+                    "$ref": "#/definitions/CardStopMode"
+                },
+                "stopTimer": {
+                    "type": "number"
+                },
+                "stopCensus": {
+                    "type": "number"
+                },
+                "points": {
+                    "type": "number"
+                },
+                "colors": {
+                    "type": "object",
+                    "properties": {
+                        "background": {
+                            "$ref": "#/definitions/ColorValue"
+                        },
+                        "text": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "images": {
+                    "type": "object",
+                    "properties": {
+                        "background": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "transition": {
+                    "$ref": "#/definitions/CardTransition"
+                },
+                "programmed": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "type"
+            ],
+            "additionalProperties": true
+        },
+        "ICardSet": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "number"
+                }
+            }
+        },
+        "CardType": {
+            "type": "number",
+            "enum": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16
+            ]
+        },
+        "CardStatus": {
+            "type": "number",
+            "enum": [
+                0,
+                1,
+                2
+            ]
+        },
+        "CardStopMode": {
+            "type": "number",
+            "enum": [
+                0,
+                1,
+                2
+            ]
+        },
+        "ColorValue": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "$ref": "#/definitions/IGradientData"
+                }
+            ]
+        },
+        "Media": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "$ref": "#/definitions/IRTMPStream"
+                }
+            ]
+        },
+        "IRTMPStream": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "playerId": {
+                    "type": "string"
+                },
+                "sourceUrl": {
+                    "type": "string"
+                },
+                "streamUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "type",
+                "playerId",
+                "sourceUrl",
+                "streamUrl"
+            ],
+            "additionalProperties": true
+        },
+        "IGradientData": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/GradientType"
+                },
+                "direction": {
+                    "$ref": "#/definitions/GradientDirection"
+                },
+                "steps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IGradientStep"
+                    }
+                },
+                "generatedStyle": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "direction",
+                "steps"
+            ],
+            "additionalProperties": false
+        },
+        "IGradientData": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/GradientType"
+                },
+                "direction": {
+                    "$ref": "#/definitions/GradientDirection"
+                },
+                "steps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IGradientStep"
+                    }
+                },
+                "generatedStyle": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "direction",
+                "steps"
+            ],
+            "additionalProperties": false
+        },
+        "GradientType": {
+            "type": "number",
+            "enum": [
+                0,
+                1,
+                2
+            ]
+        },
+        "GradientDirection": {
+            "type": "string",
+            "enum": [
+                "to bottom",
+                "to top",
+                "to right",
+                "to left",
+                "to bottom right",
+                "to bottom left",
+                "to top right",
+                "to top left",
+                ""
+            ]
+        },
+        "IGradientStep": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "color",
+                "position"
+            ],
+            "additionalProperties": false
+        },
+        "CardTransition": {
+            "type": "number",
+            "enum": [
+                0,
+                1,
+                2
+            ]
+        },
+        "ChannelType": {
+            "type": "number",
+            "enum": [
+                0,
+                1
+            ]
+        },
+        "ITimeline": {
+            "type": "object",
+            "properties": {
+                "cards": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ITimelineCard"
+                    }
+                },
+                "media": {
+                    "type": "string"
+                },
+                "duration": {
+                    "type": "number"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ITimelineCard": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/CardType"
+                },
+                "startTime": {
+                    "type": "number"
+                },
+                "status": {
+                    "$ref": "#/definitions/CardStatus"
+                },
+                "stopMode": {
+                    "$ref": "#/definitions/CardStopMode"
+                },
+                "stopTimer": {
+                    "type": "number"
+                },
+                "stopCensus": {
+                    "type": "number"
+                },
+                "points": {
+                    "type": "number"
+                },
+                "colors": {
+                    "type": "object",
+                    "properties": {
+                        "background": {
+                            "$ref": "#/definitions/ColorValue"
+                        },
+                        "text": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "images": {
+                    "type": "object",
+                    "properties": {
+                        "background": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "transition": {
+                    "$ref": "#/definitions/CardTransition"
+                },
+                "programmed": {
+                    "type": "boolean"
+                },
+                "startTimer": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "id",
+                "name",
+                "type"
+            ],
+            "additionalProperties": true
+        }
+    }
+}

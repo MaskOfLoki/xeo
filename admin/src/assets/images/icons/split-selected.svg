@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="78" height="117" viewBox="0 0 78 117">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1152" data-name="Rectangle 1152" width="71" height="54" transform="translate(8028 -1978)" fill="#01ecfc"/>
+    </clipPath>
+    <filter id="Rectangle_1150" x="0" y="0" width="78" height="117" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#01ecfc"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Line_139" x="0.5" y="42.5" width="77" height="32" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-2"/>
+      <feFlood flood-color="#01ecfc"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Split_Screen_Icon_Selected" data-name="Split Screen Icon Selected" transform="translate(-7913 2037)">
+    <g id="Mask_Group_32" data-name="Mask Group 32" transform="translate(-111)" clip-path="url(#clip-path)">
+      <rect id="Rectangle_1151" data-name="Rectangle 1151" width="48" height="87" rx="10" transform="translate(8039 -2022)" fill="rgba(1,236,252,0.2)"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 7913, -2037)" filter="url(#Rectangle_1150)">
+      <g id="Rectangle_1150-2" data-name="Rectangle 1150" transform="translate(15 15)" fill="none" stroke="#01ecfc" stroke-width="2">
+        <rect width="48" height="87" rx="10" stroke="none"/>
+        <rect x="1" y="1" width="46" height="85" rx="9" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 7913, -2037)" filter="url(#Line_139)">
+      <line id="Line_139-2" data-name="Line 139" x2="47" transform="translate(15.5 58.5)" fill="none" stroke="#01ecfc" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

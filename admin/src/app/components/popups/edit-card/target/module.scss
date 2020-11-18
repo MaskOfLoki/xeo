@@ -1,0 +1,66 @@
+@import '../base/module';
+@import '../../../../utils/index';
+@value cardWrapper from '../../../card/module.scss';
+
+.control {
+  @extend .baseEdit;
+  @extend .column;
+
+  .header {
+    @extend .column;
+    width: 30%;
+
+    span {
+      font-weight: 1vw;
+    }
+
+    select {
+      margin-top: 0.3vw;
+      margin-bottom: 1vw;
+    }
+  }
+
+  .groupEntries {
+    @extend .column;
+    font-size: 1vw;
+    margin-top: 1vw;
+
+    .row {
+      align-items: center;
+      margin-bottom: 0.5vw;
+      border-bottom: white solid 1px;
+    }
+
+    .index {
+      margin-right: 1vw;
+    }
+
+    .image {
+      width: 10vw;
+      height: 5vw;
+      background: no-repeat center;
+      background-size: contain;
+    }
+
+    .line {
+      width: 100%;
+      height: 0.1vw;
+      background: white;
+      margin-left: 0.5vw;
+      margin-right: 0.5vw;
+    }
+
+    .labelSkip {
+      margin-left: auto;
+      margin-right: 0.5vw;
+    }
+
+    .cardWrapper {
+      margin-left: auto;
+    }
+
+    button {
+      width: 7vw;
+    }
+  }
+}

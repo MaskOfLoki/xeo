@@ -1,0 +1,73 @@
+@import '../../utils/colors.scss';
+
+.groupInput {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .label {
+    margin-top: 0.4vw;
+    margin-right: 0.5vw;
+    color: white;
+    font-size: 0.8vw;
+  }
+
+  .inputWrapper {
+    width: 100%;
+    position: relative;
+
+    input {
+      width: calc(100% - 0.5vw);
+      margin-bottom: 0.2vw;
+      background: $neutralColor5;
+      border: $borderWidth $neutralColor3 solid;
+      border-radius: 0.4vw;
+      color: white;
+      font-size: 0.8vw;
+      height: $inputHeight;
+      padding-left: 0.5vw;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .characterLabel {
+      color: $neutralColor3;
+      margin-left: 0.2vw;
+      text-align: left;
+      font-size: 0.75vw;
+    }
+
+    .clearValue {
+      cursor: pointer;
+      position: absolute;
+      top: -0.25vw;
+      right: -0.5vw;
+      width: 1vw;
+      height: 1vw;
+      font-size: 0.6vw;
+      text-align: center;
+      border-radius: 50%;
+      background-color: black;
+      opacity: 0.8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: whitesmoke;
+      z-index: 100;
+    }
+  }
+
+  &.error {
+    input {
+      border: $borderWidth red solid;
+    }
+  }
+}

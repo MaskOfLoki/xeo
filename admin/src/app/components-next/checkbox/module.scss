@@ -1,0 +1,48 @@
+@import '../../utils/colors.scss';
+
+.checkbox {
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-gap: 0.5em;
+  font-size: 1rem;
+  color: white;
+  align-items: center;
+
+  &.checked .checkboxLabel {
+    font-weight: bold;
+  }
+
+  .checkboxInput {
+    display: grid;
+    grid-template-areas: 'checkbox';
+
+    > * {
+      grid-area: checkbox;
+    }
+
+    input {
+      opacity: 0;
+      width: 1em;
+      height: 1em;
+      margin: 0;
+
+      &:checked + .checkboxControl {
+        background-color: white;
+        border: 0.375em solid $inputControlColor;
+        box-shadow: 0 0 0.5em 0 $inputControlColor;
+        font-weight: 500;
+      }
+    }
+    .checkboxControl {
+      display: inline-grid;
+      width: 1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      border: 1px solid $neutralColor2;
+      box-sizing: border-box;
+    }
+  }
+  .checkboxLabel {
+    font-weight: 300;
+  }
+}

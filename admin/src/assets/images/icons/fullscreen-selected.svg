@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="79" height="117" viewBox="0 0 79 117">
+  <defs>
+    <filter id="Rectangle_1153" x="0" y="0" width="79" height="117" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#01ecfc"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Full_Screen_Icon_Selected_w_media" data-name="Full Screen Icon Selected w media" transform="translate(-7934 2037)">
+    <g transform="matrix(1, 0, 0, 1, 7934, -2037)" filter="url(#Rectangle_1153)">
+      <g id="Rectangle_1153-2" data-name="Rectangle 1153" transform="translate(15 15)" fill="rgba(1,236,252,0.21)" stroke="#01ecfc" stroke-width="2">
+        <rect width="49" height="87" rx="10" stroke="none"/>
+        <rect x="1" y="1" width="47" height="85" rx="9" fill="none"/>
+      </g>
+    </g>
+    <g id="Prompt_Icon" data-name="Prompt Icon">
+      <g id="Ellipse_521" data-name="Ellipse 521" transform="translate(7964 -1969)" fill="none" stroke="#01ecfc" stroke-width="1.5" opacity="0.75">
+        <circle cx="10" cy="10" r="10" stroke="none"/>
+        <circle cx="10" cy="10" r="9.25" fill="none"/>
+      </g>
+      <g id="Ellipse_522" data-name="Ellipse 522" transform="translate(7959 -1974)" fill="none" stroke="#01ecfc" stroke-width="1" opacity="0.5">
+        <circle cx="15" cy="15" r="15" stroke="none"/>
+        <circle cx="15" cy="15" r="14.5" fill="none"/>
+      </g>
+      <g id="Ellipse_523" data-name="Ellipse 523" transform="translate(7969 -1964)" fill="none" stroke="#01ecfc" stroke-width="2">
+        <circle cx="5" cy="5" r="5" stroke="none"/>
+        <circle cx="5" cy="5" r="4" fill="none"/>
+      </g>
+      <line id="Line_159" data-name="Line 159" x2="47" transform="translate(7950.5 -1978.5)" fill="none" stroke="#01ecfc" stroke-width="1" opacity="0.3"/>
+    </g>
+  </g>
+</svg>

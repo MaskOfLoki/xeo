@@ -1,0 +1,53 @@
+@import '../../../utils/colors.scss';
+@import '../../../utils/index.scss';
+
+.popup {
+  @extend .column;
+  width: 20vw;
+  height: 34vw;
+  background-image: $gradient4;
+  border-radius: 0.4vw;
+  align-items: center;
+
+  .header {
+    @extend .row;
+    height: 12.5%;
+    width: 100%;
+
+    .title {
+      color: white;
+      font-size: 0.8vw;
+      text-align: center;
+      font-weight: bold;
+      margin-left: 10%;
+      width: 80%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .closeButton {
+      @extend .button;
+      margin-left: auto;
+      margin-top: 2.5%;
+      margin-right: 3.5%;
+      width: 3%;
+      height: 1.5vw;
+      background: url('../../../../assets/images/icons/close.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .row {
+    width: 80%;
+    align-items: center;
+    color: white;
+    margin-bottom: 4%;
+
+    .date {
+      font-size: 0.8vw;
+      margin-right: auto;
+    }
+  }
+}

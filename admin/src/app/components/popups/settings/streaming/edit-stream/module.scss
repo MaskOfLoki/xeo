@@ -1,0 +1,19 @@
+@import '../../../../../utils/index.scss';
+
+.control {
+  @extend .column;
+
+  .label {
+    color: white;
+    font-size: 0.8vw;
+    margin-bottom: 0.2vw;
+    margin-top: 1vw;
+  }
+
+  .buttons {
+    @extend .row;
+    margin-top: 0.5vw;
+    width: 100%;
+    justify-content: center;
+  }
+}

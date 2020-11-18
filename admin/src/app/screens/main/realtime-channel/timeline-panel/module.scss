@@ -1,0 +1,46 @@
+@import '../../../../utils/index.scss';
+@import '../../../../utils/colors.scss';
+
+$border-radius: 10px;
+
+.control {
+  @extend .fadeIn;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  background: #1a1a29;
+  position: relative;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  .header {
+    background: linear-gradient(to right, #00c161, #007230);
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    height: 1vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .minimumBtn {
+      @extend .button;
+      width: 1vw;
+      margin-right: 0.75vw;
+      height: 0.25vw;
+      border: 0.15vw solid #21abfc;
+      border-radius: 0.2vw;
+      &.minimum {
+        height: 0vw;
+      }
+    }
+  }
+
+  &.minimumControl {
+    .headerPanel {
+      position: absolute;
+      z-index: -1;
+      margin-top: 0.75vw;
+    }
+  }
+}

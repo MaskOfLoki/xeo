@@ -1,0 +1,53 @@
+@import "../../utils/colors.scss";
+
+.groupTextArea {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .textareaLabel {
+    margin-top: 0.4vw;
+    margin-right: 0.5vw;
+    color: white;
+    font-size: 0.8vw;
+  }
+
+  .inputWrapper {
+    width: 100%;
+
+    textarea {
+      width: calc(100% - 0.5vw);
+      background: $neutralColor5;
+      border: $borderWidth $neutralColor3 solid;
+      border-radius: 0.4vw;
+      color: white;
+      padding-left: 0.5vw;
+      padding-top: 0.5vw;
+      font-size: 0.8vw;
+      height: $inputHeight * 3;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .characterLabel {
+      color: $neutralColor3;
+      margin-left: 0.2vw;
+      text-align: left;
+      font-size: 0.75vw;
+    }
+  }
+
+  &.error {
+    input {
+      border: $borderWidth red solid;
+    }
+  }
+}

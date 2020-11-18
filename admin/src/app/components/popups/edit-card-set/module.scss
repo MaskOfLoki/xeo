@@ -1,0 +1,41 @@
+.popup {
+  width: 30vw;
+  height: 20vh;
+  background-image: linear-gradient(#212937, #171C27);
+  border-radius: .4vw;
+  border: #575656 .05vw solid;
+
+  .header {
+    color: white;
+    text-align: center;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .inputContainer {
+    width: 90%;
+    margin: auto;
+  }
+
+  .controls {
+    width: 70%;
+    display: flex;
+    margin: auto;
+
+    button {
+      margin: 1vw;
+    }
+
+    .confirm {
+      flex: 1;
+    }
+
+    .cancel {
+      flex: 1;
+      border: #21ABFC .05vw solid;
+      background-color: transparent;
+    }
+  }
+}

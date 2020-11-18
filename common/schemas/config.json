@@ -1,0 +1,520 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$ref": "#/definitions/IConfig",
+    "definitions": {
+        "IConfig": {
+            "type": "object",
+            "properties": {
+                "event": {
+                    "type": "string"
+                },
+                "home": {
+                    "type": "object",
+                    "properties": {
+                        "defaultScreen": {
+                            "type":"string"
+                        },
+                        "colors": {
+                            "type": "object",
+                            "properties": {
+                                "header": {
+                                    "$ref": "#/definitions/ColorValue"
+                                },
+                                "background": {
+                                    "$ref": "#/definitions/ColorValue"
+                                },
+                                "button": {
+                                    "$ref": "#/definitions/ColorValue"
+                                },
+                                "field": {
+                                    "$ref": "#/definitions/ColorValue"
+                                },
+                                "footer": {
+                                    "$ref": "#/definitions/ColorValue"
+                                },
+                                "text": {
+                                    "type": "string"
+                                },
+                                "accent": {
+                                    "$ref": "#/definitions/ColorValue"
+                                },
+                                "liveBar": {
+                                    "$ref": "#/definitions/ColorValue"
+                                },
+                                "icon": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "images": {
+                            "type": "object",
+                            "properties": {
+                                "mainLogo": {
+                                    "type": "string"
+                                },
+                                "headerLogo": {
+                                    "type": "string"
+                                },
+                                "background": {
+                                    "type": "object",
+                                    "properties": {
+                                        "landscape": {
+                                            "type": "string"
+                                        },
+                                        "portrait": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "header": {
+                                    "type": "object",
+                                    "properties": {
+                                        "landscape": {
+                                            "type": "string"
+                                        },
+                                        "portrait": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                },
+                                "footer": {
+                                    "type": "object",
+                                    "properties": {
+                                        "landscape": {
+                                            "type": "string"
+                                        },
+                                        "portrait": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "message": {
+                            "type": "string"
+                        },
+                        "font": {
+                            "type": "string"
+                        },
+                        "wait": {
+                            "type": "object",
+                            "properties": {
+                                "landscape": {
+                                    "type": "string"
+                                },
+                                "portrait": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "leaderboard": {
+                    "type": "object",
+                    "properties": {
+                        "colors": {
+                            "type": "object",
+                            "properties": {
+                                "background": {
+                                    "$ref": "#/definitions/ColorValue"
+                                },
+                                "text": {
+                                    "type": "string"
+                                },
+                                "primary": {
+                                    "$ref": "#/definitions/ColorValue"
+                                },
+                                "secondary": {
+                                    "$ref": "#/definitions/ColorValue"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "images": {
+                            "type": "object",
+                            "properties": {
+                                "background": {
+                                    "type": "object",
+                                    "properties": {
+                                        "landscape": {
+                                            "type": "string"
+                                        },
+                                        "portrait": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "points": {
+                    "type": "object",
+                    "properties": {
+                        "poll": {
+                            "type": "number"
+                        },
+                        "sounder": {
+                            "type": "number"
+                        },
+                        "register": {
+                            "type": "number"
+                        },
+                        "checkin": {
+                            "type": "number"
+                        },
+                        "thumbs": {
+                            "type": "number"
+                        },
+                        "applause": {
+                            "type": "number"
+                        },
+                        "slider": {
+                            "type": "number"
+                        },
+                        "socialShare": {
+                            "type": "number"
+                        },
+                        "enable-skeeball": {
+                            "type": "boolean"
+                        },
+                        "enable-hat-shuffle": {
+                            "type": "boolean"
+                        },
+                        "enable-pop-a-shot": {
+                            "type": "boolean"
+                        },
+                        "enable-bingo": {
+                            "type": "boolean"
+                        },
+                        "enable-predictive-platform": {
+                            "type": "boolean"
+                        },
+                        "enable-qb-toss": {
+                            "type": "boolean"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "terms": {
+                    "type":"array",
+                    "items": {
+                        "$ref": "#/definitions/ITerm"
+                    }
+                },
+                "signup": {
+                    "type": "object",
+                    "properties": {
+                        "anonymous": {
+                            "type": "boolean"
+                        },
+                        "defaultScreen": {
+                            "type": "string"
+                        },
+                        "message": {
+                            "type": "string"
+                        },
+                        "terms": {
+                            "type": "string"
+                        },
+                        "fields": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/ISignupField"
+                            }
+                        },
+                        "iconSets":{
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/IIconSet"
+                            }
+                        },
+                        "activeIconSet": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "audioSplash": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "message": {
+                            "type": "string"
+                        },
+                        "logo": {
+                            "type": "string"
+                        },
+                        "background": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "optin": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean"
+                        },
+                        "message": {
+                            "type": "string"
+                        },
+                        "defaultChecked": {
+                            "type": "boolean"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "email": {},
+                "arcade": {},
+                "misc": {
+                    "type": "object",
+                    "properties": {
+                        "isonlyrealtime": {
+                            "type": "boolean"
+                        },
+                        "disableactionboard": {
+                            "type": "boolean"
+                        },
+                        "enableChatroom": {
+                            "type": "boolean"
+                        },
+                        "misc":{
+                            "type":"object",
+                            "properties": {
+                                "enableChatReaction": {
+                                    "type":"boolean"
+                                }
+                            }
+                        },
+                        "chat": {
+                            "type": "object",
+                            "properties": {
+                                "enableReaction": {
+                                    "type": "boolean"
+                                },
+                                "reaction1": {
+                                    "type": "string"
+                                },
+                                "reaction2": {
+                                    "type": "string"
+                                },
+                                "reaction3": {
+                                    "type": "string"
+                                },
+                                "reaction4": {
+                                    "type": "string"
+                                },
+                                "reaction5": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "sms": {
+                    "type": "object",
+                    "properties": {
+                        "defaultText": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "mainboard": {
+                    "type": "object",
+                    "properties": {
+                        "__computed": {},
+                        "images": {
+                            "type": "object",
+                            "properties": {
+                                "__computed": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "videos": {
+                            "type": "object",
+                            "properties": {
+                                "__computed": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        },
+                        "colors": {
+                            "type": "object",
+                            "properties": {
+                                "background": {
+                                    "type": "string"
+                                },
+                                "accent": {
+                                    "type": "string"
+                                },
+                                "liveResponse": {
+                                    "type": "string"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "additionalProperties": true
+                },
+                "feed": {
+                    "type": "object",
+                    "properties": {
+                        "video": {
+                            "type": "string"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "ColorValue": {
+            "anyOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "$ref": "#/definitions/IGradientData"
+                }
+            ]
+        },
+        "IGradientData": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/GradientType"
+                },
+                "direction": {
+                    "$ref": "#/definitions/GradientDirection"
+                },
+                "steps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/IGradientStep"
+                    }
+                },
+                "generatedStyle": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "direction",
+                "steps"
+            ],
+            "additionalProperties": false
+        },
+        "GradientType": {
+            "type": "number",
+            "enum": [
+                0,
+                1,
+                2
+            ]
+        },
+        "GradientDirection": {
+            "type": "string",
+            "enum": [
+                "to bottom",
+                "to top",
+                "to right",
+                "to left",
+                "to bottom right",
+                "to bottom left",
+                "to top right",
+                "to top left",
+                ""
+            ]
+        },
+        "IGradientStep": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "color",
+                "position"
+            ],
+            "additionalProperties": false
+        },
+        "IIconSet": {
+            "type":"object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "icons": {
+                    "type":"array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "ISignupField": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/SignupFieldType"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type",
+                "name"
+            ],
+            "additionalProperties": true
+        },
+        "ITerm": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "url"
+            ]
+        },
+        "SignupFieldType": {
+            "type": "number",
+            "enum": [
+                0,
+                1
+            ]
+        }
+    }
+}

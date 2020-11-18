@@ -1,0 +1,29 @@
+@import '../card-base/module.scss';
+
+.screen {
+  @extend .baseScreen;
+  background: no-repeat center;
+  background-size: cover;
+
+  .video {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .screen {
+    &.programmed {
+      width: 27%;
+      margin-left: 73%;
+      z-index: 99;
+
+      .video {
+        justify-content: flex-start;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import '../../../../../utils/index.scss';
+
+.control {
+  @extend .column;
+  margin-top: 1vw;
+  background: #1a1a26;
+  border: #6f6f74 solid 0.1vw;
+  width: 100%;
+  height: 50%;
+  border-radius: 0.5vw;
+  overflow: hidden;
+
+  .row {
+    color: #6f6f74;
+    font-size: 1vw;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2%;
+    align-items: center;
+
+    .label {
+      margin-right: auto;
+    }
+
+    .buttonEdit {
+      cursor: pointer;
+      background: #21abfc;
+      mask: url('../../../../../../assets/images/icons/edit.svg') no-repeat center;
+      mask-size: contain;
+      width: 1vw;
+      height: 1vw;
+    }
+
+    .buttonDelete {
+      @extend .buttonEdit;
+      mask: url('../../../../../../assets/images/icons/trash.svg') no-repeat center;
+      margin-left: 0.7vw;
+    }
+  }
+}

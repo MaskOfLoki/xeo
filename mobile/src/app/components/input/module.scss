@@ -1,0 +1,28 @@
+.input {
+  border: none;
+  padding: 2% 5% 2% 5%;
+  font-size: 4vmin;
+  color: black;
+  font-family: 'SF-Pro-Text-Light', serif;
+  border-bottom: 0.1vw black solid;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: black;
+    font-size: 4vmin;
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .input {
+    padding: 1.5% 2.5% 1.5% 2.5%;
+    font-size: 1.5vmax;
+
+    &::placeholder {
+      font-size: 1.5vmax;
+    }
+  }
+}

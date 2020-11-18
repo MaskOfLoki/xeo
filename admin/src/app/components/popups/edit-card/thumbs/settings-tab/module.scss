@@ -1,0 +1,27 @@
+.settingsTab > * {
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  margin: 3rem 0 1rem;
+
+  .leftCol {
+    padding-right: 0.5rem;
+    width: 50%;
+  }
+
+  .rightCol {
+    padding-left: 0.5rem;
+    width: 50%;
+  }
+}
+
+.imageTitle {
+  display: flex;
+  margin-bottom: 0.5rem;
+
+  > span {
+    margin-right: 0.5rem;
+  }
+}

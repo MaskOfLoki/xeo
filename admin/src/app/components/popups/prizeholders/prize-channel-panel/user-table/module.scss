@@ -1,0 +1,202 @@
+@import '../../../../../utils/colors.scss';
+@import '../../../../../utils/index.scss';
+
+.control {
+  width: 100%;
+
+  .list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .listHeader {
+      width: 98%;
+      padding-right: 2%;
+      display: flex;
+      flex-direction: row;
+      color: $neutralColor2;
+      font-weight: bold;
+      margin-top: 0.7vw;
+      margin-bottom: 0.35vw;
+      font-size: 0.7vw;
+
+      .checkCol {
+        width: 10%;
+      }
+
+      .userNameCol {
+        width: 20%;
+      }
+
+      .emailCol {
+        width: 17.5%;
+      }
+
+      .phoneCol {
+        width: 17.5%;
+        text-align: end;
+      }
+
+      .scoreCol {
+        width: 20%;
+        text-align: center;
+      }
+
+      .statusCol {
+        width: 15%;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .listMain {
+      width: 99%;
+      padding-right: 1%;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      max-height: 22.5vw;
+
+      &::-webkit-scrollbar {
+        width: 0.5vw;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 0.25vw;
+        background: $globalSolidColor;
+      }
+
+      .listItem {
+        @extend .listHeader;
+        width: 100%;
+        padding-right: 0%;
+        font-weight: normal;
+        font-size: 0.6vw;
+        line-height: 1.1vw;
+        margin-top: 0vw;
+        margin-bottom: 0vw;
+        display: flex;
+        align-items: center;
+
+        .checkCol {
+
+          .actionCheckBtn {
+            @extend .button;
+            border-radius: 50%;
+            border: solid 0.1vw white;
+            cursor: pointer;
+            width: 0.6vw;
+            height: 0.6vw;
+            margin-left: 5%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .checkIcon {
+              width: 80%;
+              height: 80%;
+              mask-repeat: no-repeat;
+              mask-size: contain;
+              mask-image: url('../../../../../../assets/images/icons/checkmark.svg');
+              background: $globalSolidColor;
+              display: none;
+            }
+
+            &.selected {
+              .checkIcon {
+                display: block;
+              }
+            }
+          }
+        }
+
+        .statusCol {
+          .editBtn {
+            @extend .button;
+            margin-left: 0.5vw;
+            width: 0.7vw;
+            height: 0.7vw;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            mask-image: url('../../../../../../assets/images/icons/prize-edit.svg');
+            background: $globalSolidColor;
+          }
+        }
+
+        &:nth-child(even) {
+          background: rgba(255, 255, 255, 0.05);
+        }
+      }
+    }
+  }
+
+  .pagination {
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    align-items: center;
+
+    .paginationInfo {
+      color: $neutralColor2;
+      font-size: 0.75vw;
+      font-weight: bold;
+    }
+
+    .paginationBtnList {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+
+      .leftArrowBtn {
+        @extend .button;
+        color: $globalSolidColor;
+        margin-right: 1vw;
+        font-size: 1.5vw;
+        line-height: 1.25vw;
+
+        &.disable {
+          opacity: 0.3;
+        }
+      }
+
+      .pageNoBtn {
+        color: white;
+        width: 1.5vw;
+        height: 1.25vw;
+        border-radius: 0.4vw;
+        margin-right: 0.5vw;
+        font-size: 0.5vw;
+
+        &.threeDots {
+          pointer-events: none;
+          border: none;
+          background: none;
+          letter-spacing: 0.2vw;
+        }
+
+        &:nth-last-child(2) {
+          margin-right: 0vw;
+        }
+      }
+
+      .rightArrowBtn {
+        @extend .leftArrowBtn;
+        margin-right: 0vw;
+        margin-left: 1vw;
+      }
+    }
+
+    .selectedText {
+      color: $globalSolidColor;
+      font-size: 0.75vw;
+      font-weight: bold;
+      margin-left: auto;
+    }
+  }
+}

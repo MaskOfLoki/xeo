@@ -1,0 +1,65 @@
+@import '../../utils/colors.scss';
+
+.inputNew {
+  width: 100%;
+  position: relative;
+  font-size: 1rem;
+
+  input,
+  textarea {
+    display: block;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid white;
+    background: none;
+    padding: 0.25em 0;
+    outline: none;
+    width: 100% !important;
+    color: white;
+    font-family: Roboto, sans-serif;
+    font-size: 1em;
+
+    &:focus + .inputBorder {
+      width: 100%;
+      box-shadow: 0 0 0.25em 0 $inputControlColor;
+    }
+  }
+
+  .inputBorder {
+    width: 0;
+    height: 1px;
+    margin-top: -1px;
+    position: relative;
+    transition: width 100ms linear;
+    background-color: $inputControlColor;
+    z-index: 1;
+  }
+
+  .helperRow {
+    height: 1em;
+    font-size: 0.75em;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $neutralColor3;
+    margin-top: 0.25em;
+  }
+
+  &.disabled {
+    input,
+    textarea {
+      color: $neutralColor3;
+      border-bottom-color: $neutralColor3;
+    }
+  }
+
+  &.small {
+    font-size: 0.8rem;
+
+    input,
+    textarea {
+      font-size: 0.8rem;
+    }
+  }
+}

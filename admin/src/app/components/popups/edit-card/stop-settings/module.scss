@@ -1,0 +1,85 @@
+@import '../../../../utils/colors.scss';
+
+.control {
+  display: flex;
+  flex-direction: column;
+  margin-left: 55%;
+  width: 45%;
+  position: absolute;
+  z-index: 100;
+
+  &.disabled {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    pointer-events: none;
+  }
+
+  .groupInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4%;
+
+    button {
+      width: 42.5%;
+      margin-right: 2%;
+    }
+
+    .groupTimer {
+      width: 27.5%;
+      background: $neutralColor5;
+      border: 0.08vw $neutralColor3 solid;
+      border-radius: 0.4vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      overflow: hidden;
+      justify-content: center;
+      margin-right: 2%;
+
+      &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      input {
+        padding: 0;
+        width: $inputHeight;
+        line-height: $inputHeight;
+        background: $neutralColor5;
+        border: none;
+        border-radius: 0;
+        text-align: center;
+        font-size: 0.8vw;
+      }
+
+      .semiLabel {
+        width: 0.5vw;
+        text-align: center;
+        line-height: $inputHeight;
+      }
+    }
+
+    .clockIcon {
+      background: url('../../../../../assets/images/icons/countdown.svg') no-repeat center;
+      background-size: contain;
+      height: 1.3vw;
+      width: 1.2vw;
+      margin-top: 0.2vw;
+      margin-bottom: 0.25vw;
+    }
+
+    .groupCensus {
+      @extend .groupTimer;
+
+      input {
+        width: 3.5vw;
+      }
+    }
+
+    .userIcon {
+      @extend .clockIcon;
+      background-image: url('../../../../../assets/images/icons/user.svg');
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@import '../../../../utils/module';
+@value avatar from '../../../../components/avatar/module.scss';
+@value button from '../../../../components/button/module.scss';
+
+.profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .avatarGroup {
+    position: relative;
+    margin-top: 5%;
+    height: 30vmin;
+    width: 30vmin;
+    cursor: pointer;
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+    }
+
+    .buttonEdit {
+      position: absolute;
+      background: #01ecfc;
+      mask: url('../../../../../assets/images/icons/edit.svg') no-repeat center top;
+      mask-size: contain;
+      width: 5vmin;
+      height: 5vmin;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .groupInput {
+    width: 65%;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .groupSaveInput {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 0.6vmin solid white;
+        color: white;
+        text-align: center;
+      }
+
+      .buttonEdit {
+        background: #01ecfc;
+        mask: url('../../../../../assets/images/icons/edit.svg') no-repeat center top;
+        mask-size: contain;
+        width: 5vmin;
+        height: 5vmin;
+        margin-left: -5vmin;
+      }
+    }
+
+    .inputLabel {
+      margin-top: 1vmin;
+      opacity: 0.75;
+      font-size: 3.5vmin;
+    }
+  }
+
+  .groupSaveButton {
+    margin-top: 5%;
+    width: 6vmin;
+    height: auto;
+  }
+
+  .groupHomeButton {
+    margin-top: 5%;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: 15%;
+
+    .buttonHomeCircle {
+      display: flex;
+      width: auto;
+      height: auto;
+      border: white;
+      border-style: solid;
+      border-radius: 12vmin;
+      align-items: center;
+      align-content: center;
+      padding: 2vmin;
+
+      .buttonHome {
+        background: white;
+        mask: url('../../../../../assets/images/icons/home.svg') no-repeat center top;
+        mask-size: contain;
+        width: 10vmin;
+        height: 10vmin;
+      }
+    }
+  }
+
+  &.hasChannelVideo {
+    .userName {
+      margin-top: 1%;
+      margin-bottom: 1%;
+    }
+
+    .groupCommon {
+      input {
+        margin-bottom: 2%;
+      }
+    }
+
+    .avatar {
+      margin-top: 0%;
+      height: 25vmin;
+      width: 25vmin;
+    }
+  }
+
+  .groupCheckbox {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin-bottom: 1%;
+    margin-top: 3%;
+    justify-content: center;
+    align-items: center;
+
+    .inputLabel {
+      margin-left: 1%;
+      margin-top: 1vmin;
+      margin-bottom: 0;
+    }
+  }
+
+  .inputCheckbox {
+    width: 7vmin;
+    height: 7vmin;
+    margin-right: 1%;
+    background: #3b89c5;
+    box-shadow: 2px 3px 2px 1px rgba(53, 53, 88, 0.2);
+  }
+}

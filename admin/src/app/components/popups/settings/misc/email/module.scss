@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1vw;
+  margin-right: 1vw;
+
+  .title {
+    height: 2vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2vmin;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+  }
+
+  .label {
+    color: white;
+    text-align: left;
+    font-size: 1.5vmin;
+    margin-bottom: 0.25vh;
+  }
+
+  .emailAndButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  .email {
+  }
+
+  .testButton {
+    margin-left: 1vw;
+    margin-right: 0.5vw;
+  }
+}

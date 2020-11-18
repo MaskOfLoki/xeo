@@ -1,0 +1,124 @@
+@import '../../../../../utils/index.scss';
+@import '../../../../../utils/colors.scss';
+
+.control {
+  @extend .row;
+  width: 100%;
+  padding-bottom: 2.5%;
+  height: 35%;
+  border-bottom: 1px solid #383841;
+  user-select: none;
+  justify-content: space-around;
+
+  .layoutColumn {
+    width: 75%;
+    height: 57%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .layoutRow {
+      width: 100%;
+      height: 60%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .layout {
+        position: relative;
+        height: 100%;
+        width: 30%;
+        margin-right: 3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        color: white;
+        font-size: 0.6vw;
+        text-align: center;
+        border: none;
+        font-weight: bold;
+        padding: 0;
+        border: 1px solid $globalSolidColor;
+
+        .sidmessage {
+          width: 50%;
+          margin-left: 15%;
+        }
+
+        .lower_third {
+          position: absolute;
+          bottom: 0;
+          height: 25%;
+          width: 100%;
+          background-color: $globalSolidColor;
+        }
+
+        .side_slab {
+          position: absolute;
+          right: 0;
+          height: 100%;
+          width: 30%;
+          background-color: $globalSolidColor;
+        }
+
+        &.outline {
+          border-color: $neutralColor3;
+
+          .lower_third {
+            background-color: $neutralColor3;
+          }
+
+          .side_slab {
+            background-color: $neutralColor3;
+          }
+        }
+      }
+    }
+
+    .zoneRow {
+      width: 100%;
+      height: 30%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 3%;
+
+      .zone {
+        height: 100%;
+        width: 30%;
+        margin-right: 3.3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        select {
+          height: 100%;
+          font-size: 0.6vw;
+        }
+      }
+    }
+  }
+
+  .buttonColumn {
+    width: 30%;
+    height: 57%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    button {
+      width: 95%;
+      flex: 1;
+      font-size: 0.6vw;
+      margin-bottom: 7.5%;
+      border-radius: 0.3vw;
+
+      &:last-child {
+        margin-bottom: unset;
+      }
+    }
+  }
+}

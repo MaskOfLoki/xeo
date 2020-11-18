@@ -1,0 +1,112 @@
+@import '../../../utils/module';
+@import '../../../../fonts.scss';
+
+@value avatar from '../../../components/avatar/module.scss';
+
+@value button from '../../../components/button/module.scss';
+
+.profile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    width: 100%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .container {
+    width: 90%;
+
+    .title {
+      color: rgba(255, 255, 255, 0.7);
+      border-bottom: rgba(255, 255, 255, 0.7) solid 1px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .userInfo {
+      margin-top: 10%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .avatar {
+        height: 25vmin;
+        width: 25vmin;
+      }
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 4vw;
+        height: 80%;
+
+        div {
+          @extend %generalText;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      .button {
+        margin: auto;
+        margin-top: 3vh;
+        width: 30%;
+        @extend %generalText;
+      }
+
+      &.showChatroom {
+        width: 100%;
+        margin-left: 0%;
+      }
+    }
+
+    .teams {
+      margin-top: 10%;
+      display: flex;
+      flex-direction: column;
+
+      .status {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .button {
+        @extend %generalText;
+        width: 30%;
+        margin: auto;
+      }
+    }
+
+    .label {
+      margin-top: 5%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .groupButtons {
+      width: 80%;
+      margin-top: 5%;
+      margin-left: 10%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .button {
+        width: 30%;
+        @extend %generalText;
+      }
+    }
+  }
+}

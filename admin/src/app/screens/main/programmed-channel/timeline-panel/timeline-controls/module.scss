@@ -1,0 +1,44 @@
+@import '../../../../../utils/index.scss';
+
+.control {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5vw;
+  justify-content: center;
+
+  @mixin button($name) {
+    @extend .button;
+    background: url('../../../../../../assets/images/icons/playback/' + $name + '.svg') no-repeat center;
+    background-size: contain;
+    width: 2vw;
+    height: 1.3vw;
+    margin-left: 0.5vw;
+  }
+
+  .buttonStart {
+    @include button('start');
+  }
+
+  .buttonPrev {
+    @include button('prev');
+  }
+
+  .buttonPlay {
+    @include button('play');
+  }
+
+  .buttonPause {
+    @include button('pause');
+    transform: scale(1.5);
+  }
+
+  .buttonNext {
+    @include button('next');
+  }
+
+  .buttonEnd {
+    @include button('end');
+  }
+}

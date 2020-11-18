@@ -1,0 +1,18 @@
+@value groupInput, groupInput from '../../input/module.scss';
+
+.control {
+  display: flex;
+  flex-direction: column;
+  padding: 1vw;
+  padding-bottom: 0vw;
+  width: 90%;
+
+  .groupInput {
+    width: 100%;
+
+    &:first-child {
+      margin-bottom: 1.5vw;
+      width: 75%;
+    }
+  }
+}

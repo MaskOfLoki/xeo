@@ -1,0 +1,76 @@
+@import '../../../fonts.scss';
+
+.notificationButton {
+  position: absolute;
+  bottom: 5vh;
+  left: 5vw;
+  width: 20vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transform: scale(0, 0);
+  transform-origin: center;
+  background: rgba(0, 0, 0, 0.7);
+
+  border: 0.8vh solid whitesmoke;
+  border-radius: 40px;
+
+  transition: transform 1.5s ease-in-out, width 1.5s ease-in-out;
+
+  &.show {
+    transform: scale(1, 1);
+
+    animation: pulse 2s infinite;
+  }
+
+  &.shrink {
+    .icon {
+      width: 100%;
+    }
+
+    .message {
+      width: 0%;
+      opacity: 0;
+      font-size: 0;
+    }
+
+    width: 10vh;
+  }
+
+  .icon {
+    mask: no-repeat;
+    mask-position: 50% center;
+    mask-size: 60% 60%;
+    width: 25%;
+    height: 100%;
+    transform: width 2s ease-in-out;
+    background: whitesmoke;
+  }
+
+  .message {
+    @extend %minorText;
+    opacity: 1;
+    width: 75%;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: width 2s ease-in-out, opacity 2s ease-in-out, font-size 2s ease-in-out;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 10px 20px rgba(255, 255, 255, 0);
+  }
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .notificationButton {
+    display: none;
+  }
+}

@@ -1,0 +1,43 @@
+.button {
+  font-size: 5vmin;
+  min-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding-top: 2vmin;
+  padding-bottom: 2vmin;
+  padding-left: 4vmin;
+  padding-right: 4vmin;
+  text-align: center;
+  background: linear-gradient(to right, #21abfc 0%, #00578b 100%);
+  transition: transform 0.1s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10vw;
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &.disabled {
+    pointer-events: none;
+  }
+
+  &.default.disabled {
+    opacity: 0.6;
+  }
+
+  &.grad1.disabled {
+    border: 1px solid #707070 !important;
+    background: #030225 !important;
+    color: #707070;
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .button {
+    font-size: 1.5vmax;
+    width: 20%;
+    padding-top: 0.75%;
+    padding-bottom: 0.75%;
+  }
+}

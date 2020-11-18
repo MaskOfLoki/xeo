@@ -1,0 +1,72 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  overflow-x: auto;
+
+  table {
+    table-layout: fixed;
+    width: 80%;
+    height: 80%;
+    margin-left: 5%;
+    margin-top: 5%;
+
+    th {
+      width: 100%;
+      font-size: 0.9vw;
+      display: flex;
+      flex-direction: row;
+
+      td {
+        text-align: left;
+      }
+
+      td.name {
+        margin: auto 0;
+        width: 20%;
+      }
+
+      td.url {
+        margin: auto 0;
+        width: 60%;
+      }
+    }
+
+    tbody {
+      height: 80%;
+      overflow-x: auto;
+
+      tr {
+        width: 100%;
+        font-size: 0.9vw;
+        display: flex;
+        flex-direction: row;
+
+        td.name {
+          margin: auto 0;
+          width: 20%;
+        }
+
+        td.url {
+          word-wrap: break-word;
+          margin: auto 0;
+          width: 60%;
+        }
+
+        td.actions {
+          width: 20%;
+          height: 3.6vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+
+          button {
+            height: 1.5vw;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import '../../../../utils/colors.scss';
+
+$borderRadius: 0.05vw;
+
+.loading {
+  color: darkgray;
+  padding-left: 3vw;
+  padding-top: 3vh;
+}
+
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+
+  .mainPanel {
+    width: 65%;
+    height: 100%;
+    border-right: $borderRadius $neutralColor4 solid;
+    display: flex;
+    flex-direction: column;
+
+    .titlePanel {
+      display: flex;
+      flex-direction: row;
+      height: 13%;
+      margin-left: 7.5%;
+
+      .titleLabel {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 0.8vw;
+      }
+    }
+
+    .mainContent {
+      width: 100%;
+      height: 87%;
+      display: flex;
+      flex-direction: row;
+
+      .teamListPanel {
+        width: 35%;
+        height: 100%;
+        border-right: $borderRadius solid $neutralColor4;
+        overflow: auto;
+      }
+
+      .teamPropsPanel {
+        width: 60%;
+        height: 100%;
+      }
+    }
+  }
+}

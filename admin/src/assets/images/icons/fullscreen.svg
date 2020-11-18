@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="49" height="87" viewBox="0 0 49 87">
+  <g id="Full_Screen_Icon_w_media" data-name="Full Screen Icon w media" transform="translate(-7949 2022)">
+    <g id="Rectangle_1153" data-name="Rectangle 1153" transform="translate(7949 -2022)" fill="none" stroke="#c1c1c1" stroke-width="1">
+      <rect width="49" height="87" rx="10" stroke="none"/>
+      <rect x="0.5" y="0.5" width="48" height="86" rx="9.5" fill="none"/>
+    </g>
+    <g id="Prompt_Icon" data-name="Prompt Icon">
+      <g id="Ellipse_521" data-name="Ellipse 521" transform="translate(7964 -1969)" fill="none" stroke="#c1c1c1" stroke-width="1.5" opacity="0.75">
+        <circle cx="10" cy="10" r="10" stroke="none"/>
+        <circle cx="10" cy="10" r="9.25" fill="none"/>
+      </g>
+      <g id="Ellipse_522" data-name="Ellipse 522" transform="translate(7959 -1974)" fill="none" stroke="#c1c1c1" stroke-width="1" opacity="0.5">
+        <circle cx="15" cy="15" r="15" stroke="none"/>
+        <circle cx="15" cy="15" r="14.5" fill="none"/>
+      </g>
+      <g id="Ellipse_523" data-name="Ellipse 523" transform="translate(7969 -1964)" fill="none" stroke="#c1c1c1" stroke-width="2">
+        <circle cx="5" cy="5" r="5" stroke="none"/>
+        <circle cx="5" cy="5" r="4" fill="none"/>
+      </g>
+      <line id="Line_159" data-name="Line 159" x2="47" transform="translate(7950.5 -1978.5)" fill="none" stroke="#c1c1c1" stroke-width="1" opacity="0.3"/>
+    </g>
+  </g>
+</svg>

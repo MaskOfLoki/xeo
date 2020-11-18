@@ -1,0 +1,33 @@
+.popupOverlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0.5);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: tweenShow 0.2s forwards;
+  z-index: 100;
+
+  @keyframes tweenShow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes tweenHide {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}

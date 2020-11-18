@@ -1,0 +1,58 @@
+@import '../../../../../utils/colors.scss';
+
+.container {
+  height: 100%;
+  margin-left: 1vw;
+  margin-right: 1vw;
+
+  .row {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .configSlider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+    margin-bottom: 3%;
+
+    .sliderLabel {
+      font-size: 0.9vw;
+      color: white;
+      width: 80%;
+      line-height: 1vw;
+    }
+  }
+
+  .image{
+    width: 100%;
+    height: 8%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vw;
+
+    .imageLabel {
+      width: 50%;
+      height: 100%;
+      font-size: 0.9vw;
+      display: flex;
+      color: white;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: $borderWidth solid $neutralColor4;
+      padding-bottom: 0.5vw;
+    }
+
+    .imageReactions {
+      display: flex;
+      height: 4vw;
+
+      .fileUpload {
+        width: 12%;
+        margin: 0.5vw;
+      }
+    }
+  }
+}

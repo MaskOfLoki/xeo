@@ -1,0 +1,44 @@
+@value buttonDelete from '../../../file-upload/module.scss';
+
+.control {
+  max-width: 80%;
+  select {
+    width: 100%;
+    height: 1.2vw;
+    text-transform: uppercase;
+    font-size: 0.5vw;
+    border-radius: 0.3vw;
+    border: 0.07vw white solid;
+    padding-left: 0.2vw;
+    option {
+      font-size: 0.6vw;
+    }
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .uploadLabel {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 0.5vw;
+    margin-bottom: 0.1vw;
+    font-size: 0.5vw;
+    text-align: center;
+  }
+
+  .uploadField {
+    width: 1.75vw;
+    height: 1.75vw;
+    margin: 0 auto;
+    .buttonDelete {
+      width: 0.75vw;
+      height: 0.75vw;
+      font-size: 0.5vw;
+    }
+  }
+}

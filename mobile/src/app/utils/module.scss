@@ -1,0 +1,23 @@
+.inputLabel {
+  font-size: 4vmin;
+  margin-bottom: 1.5%;
+  text-align: left;
+}
+
+.groupCommon {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.introText {
+  width: 80%;
+  text-align: center;
+}
+
+$headerHeightLandscape: 12%;
+$headerHeightPortrait: 8vh;
+$liveBarHeightLandscape: 8%;
+$liveBarHeightPortrait: 6vh;
+$mainHeightLandscape: 100%;
+$mainHeightPortrait: 94%;

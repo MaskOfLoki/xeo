@@ -1,0 +1,20 @@
+import { ISlideAttrs } from './index';
+import styles from './module.scss';
+import m, { Vnode } from 'mithril';
+import cn from 'classnames';
+
+export function template({ children, attrs }: Vnode<ISlideAttrs>) {
+  return (
+    <div
+      title={attrs.title}
+      class={cn(styles.slide, attrs.class, { [styles.readonly]: attrs.readonly })}
+      onclick={() => attrs.onchange(!attrs.selected)}
+    >
+      {children && <span class={styles.label}>{children}</span>}
+      <label class={styles.switch}>
+        <input type='checkbox' checked={attrs.selected} />
+        <span class={styles.slider}></span>
+      </label>
+    </div>
+  );
+}

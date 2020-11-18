@@ -1,0 +1,17 @@
+@value preview from '../../mobile-preview/module.scss';
+
+.control {
+  width: 100%;
+  margin-top: 2.5%;
+  max-height: 23.5vw;
+  overflow: hidden;
+
+  .cut {
+    width: 100%;
+    margin-top: 5%;
+
+    .preview {
+      width: 100%;
+    }
+  }
+}

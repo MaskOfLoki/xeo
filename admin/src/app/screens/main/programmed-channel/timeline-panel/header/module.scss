@@ -1,0 +1,70 @@
+@import '../../../../../utils/index.scss';
+
+.headerControl {
+  @extend .row;
+  width: 100%;
+  height: 3.25vw;
+  align-items: center;
+  background: #1c1b28;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  .title {
+    font-weight: bold;
+    color: $textColor;
+    margin-left: 1vw;
+    font-size: 1vw;
+  }
+
+
+  .groupSynced {
+    margin: 0 auto;
+    @extend .row;
+    align-items: center;
+
+    @mixin buttonControl($name) {
+      @extend .button;
+      background: url('../../../../../../assets/images/icons/playback/' + $name + '.svg') no-repeat center;
+      background-size: contain;
+      width: 2vw;
+      height: 1.3vw;
+      margin-right: 0.5vw;
+      margin-left: 0.5vw;
+    }
+
+    .buttonPlay {
+      @include buttonControl('play');
+    }
+  
+    .buttonPause {
+      @include buttonControl('pause');
+      transform: scale(1.5);
+    }
+
+    .buttonPrev {
+      @include buttonControl('prev');
+    }
+
+    .buttonNext {
+      @include buttonControl('next');
+    }
+  }
+
+  .groupMedia {
+    @extend .button;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1vw;
+
+    .icon {
+      background: linear-gradient(to top, #20aafa, #00588c);
+      mask: url('../../../../../../assets/images/icons/upload.svg') no-repeat center;
+      mask-size: contain;
+      width: 2vw;
+      height: 1.3vw;
+      margin-right: 0.5vw;
+    }
+  }
+}

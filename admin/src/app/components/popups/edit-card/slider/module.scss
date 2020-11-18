@@ -1,0 +1,24 @@
+@import "../base/module";
+@import "../../../../utils/colors.scss";
+@value control from '../../../quick-add/slider/module.scss';
+
+.controlWrapper {
+  @extend .baseEdit;
+  display: flex;
+  flex-direction: column;
+
+  .quckAddColumn {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 90%;
+    border-right: $borderWidth solid $neutralColor4;
+
+    .control {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,254 @@
+@import '~nprogress/nprogress.css';
+@import '~tippy.js/dist/tippy.css';
+
+@import './app/utils/index.scss';
+@import './app/utils/colors.scss';
+
+#nprogress {
+  .bar {
+    background: #f15336;
+  }
+
+  .spinner-icon {
+    border-top-color: #f15336;
+    border-left-color: #f15336;
+    margin-right: 50px;
+    margin-top: -4px;
+  }
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: url(assets/images/bg.svg) no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+
+  &.realtime {
+    background: url(assets/images/control-bg.svg) no-repeat center;
+    background-size: cover;
+  }
+
+  .draggable-mirror {
+    opacity: 0.4;
+  }
+}
+
+.app-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+select {
+  background: transparent;
+  border: $borderWidth $neutralColor3 solid;
+  border-radius: 0.4vw;
+  color: white;
+  font-size: 0.7vw;
+  height: $inputHeight;
+  padding-left: 0.5vw;
+  cursor: pointer;
+
+  option {
+    background: black;
+  }
+
+  &:invalid {
+    color: gray;
+  }
+
+  &:after {
+    border-radius: 0.4vw;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  @extend .button;
+  background: $globalSolidColorOpacity50;
+  border-radius: 0.5vw;
+  height: $buttonHeight;
+  width: 6vw;
+  position: relative;
+  cursor: pointer;
+  color: white;
+  font-size: 0.7vw;
+  text-align: center;
+  border: none;
+  font-weight: bold;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &.outline {
+    background: transparent;
+    border: $borderWidth solid $globalSolidColor;
+  }
+
+  &.selected {
+    border: $borderWidth solid $globalSolidColor;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.gc-input {
+  background: $neutralColor5;
+  border: $borderWidth $neutralColor3 solid;
+  border-radius: 0.4vw;
+  color: white;
+  font-size: 0.8vw;
+  height: $inputHeight;
+  padding-left: 0.5vw;
+  resize: none;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.swal2-container {
+  background: $neutralColor5Opacity80 !important;
+  .swal2-popup {
+    background: $neutralColor7 !important;
+    width: 28em;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 5px 20px 0 #c7c7c724;
+    .swal2-checkbox,
+    .swal2-file,
+    .swal2-input,
+    .swal2-radio,
+    .swal2-select,
+    .swal2-textarea {
+      margin: 0.25em auto;
+    }
+    .swal2-input {
+      height: 2em;
+      padding: 0 0.75em;
+    }
+
+    .swal2-input {
+      height: 2em;
+    }
+
+    .swal2-select {
+      height: 100%;
+      font-size: 2vw;
+    }
+
+    .swal2-title {
+      display: flex !important;
+      background: linear-gradient(to right, #0a598d 0%, #20aafb 100%);
+      width: 90%;
+      font-size: 1.2em;
+      color: white;
+      margin: 0 0 0.75em;
+      justify-content: center;
+      min-height: 2.25em;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .swal2-content {
+      color: white;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .swal2-actions {
+      margin: 0.75em auto 1.25em !important;
+      justify-content: space-evenly;
+      button {
+        border-radius: 0.65em;
+        padding: 0.65em 2em;
+        font-size: 0.9em;
+        height: auto;
+        width: 9em;
+        background: linear-gradient(to right, #bebebe 0%, #222222 100%) !important;
+        text-transform: uppercase;
+        &:first-child {
+          background: $globalLinearGradientColorToRight !important;
+        }
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  // Width of vertical scroll bar
+  width: 1vw;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5vw;
+  background: #21abfc;
+}
+
+.basicContext {
+  background-color: black !important;
+  padding: 0 !important;
+
+  table {
+    border-collapse: collapse !important;
+
+    tr {
+      border-bottom: 0.1px solid $neutralColor5;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  .basicContext__item:not(.basicContext__item--disabled):hover {
+    .basicContext__data {
+      background-color: #212230;
+    }
+  }
+
+  .basicContext__data {
+    color: white;
+    min-width: 8vw !important;
+    font-size: 0.7vw;
+    text-transform: capitalize;
+    padding: 0.7vw 1vw;
+  }
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}

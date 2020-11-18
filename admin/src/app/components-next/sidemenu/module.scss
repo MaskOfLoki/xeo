@@ -1,0 +1,41 @@
+@import '../../utils/colors.scss';
+
+.sidemenu {
+  border-right: 1px solid $neutralColor10;
+  height: 100%;
+  position: relative;
+
+  .menuitem {
+    padding: 1rem 0;
+    font-weight: 300;
+    line-height: 1;
+    color: $neutralColor3;
+    cursor: pointer;
+
+    &.selected {
+      font-weight: 500;
+      color: white;
+    }
+  }
+  .rightBar {
+    position: absolute;
+    background-color: $inputControlColor;
+    width: 3px;
+    height: 3rem;
+    right: -2px;
+    top: 0;
+    transition: top 200ms linear;
+
+    &::after {
+      content: ' ';
+      display: block;
+      width: 0; 
+      height: 0; 
+      border-top: 0.25rem solid transparent;
+      border-bottom: 0.25rem solid transparent;
+      border-left: 0.25rem solid $inputControlColor;
+      margin-left: 3px;
+      margin-top: 1.15rem;
+    }
+  }
+}

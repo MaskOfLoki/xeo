@@ -1,0 +1,43 @@
+@value colorPicker, label, picker from '../../../../../color-picker/module.scss';
+
+.control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .colorLabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+    color: white;
+    width: fit-content;
+    white-space: nowrap;
+    margin-bottom: 1.5vw;
+    width: 70%;
+  }
+
+  .colors {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .column {
+      width: 50%;
+
+      .colorPicker {
+        margin-bottom: 0.8vw;
+
+        .label {
+          width: 60%;
+        }
+
+        .picker {
+          width: 1.75vw;
+          height: 1.75vw;
+        }
+      }
+    }
+  }
+}

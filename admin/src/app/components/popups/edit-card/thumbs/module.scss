@@ -1,0 +1,31 @@
+@import '../../../../utils/colors.scss';
+
+.thumbsCard {
+  display: flex;
+  height: 100%;
+
+  .leftCol {
+    width: 30%;
+    flex: none;
+  }
+  .rightCol {
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 2rem;
+    padding-top: 0.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    > div {
+      width: 85%;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0.25rem;
+      background: $neutralColor3;
+    }
+    &::-webkit-scrollbar {
+      width: 0.25rem;
+    }
+  }
+}

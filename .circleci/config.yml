@@ -1,0 +1,51 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - restore_cache:
+          key: cache-{{ checksum "package.json" }}-{{ checksum "admin/package.json" }}-{{ checksum "mainboard/package.json" }}-{{ checksum "mobile/package.json" }}-{{ checksum "sound-mixer/package.json" }}-{{ checksum "actionboard/package.json" }}
+      - run: yarn
+      - save_cache:
+          key: cache-{{ checksum "package.json" }}-{{ checksum "admin/package.json" }}-{{ checksum "mainboard/package.json" }}-{{ checksum "mobile/package.json" }}-{{ checksum "sound-mixer/package.json" }}-{{ checksum "actionboard/package.json" }}
+          paths:
+            - node_modules
+            - admin/node_modules
+            - mainboard/node_modules
+            - mobile/node_modules
+            - sound-mixer/node_modules
+            - actionboard/node_modules
+      - run: yarn lint
+      - run: yarn build
+      - run: |
+          mv mobile/www xeo
+          mv mainboard/www xeo/mainboard
+          mv admin/www xeo/admin
+          mv sound-mixer/www xeo/sound-mixer
+          mv actionboard/www xeo/actionboard
+      - store_artifacts:
+          path: xeo
+      - deploy:
+          command: |
+            if [[ $CIRCLE_BRANCH == "develop"* ]]; then
+              NETLIFY_PATH=/${CIRCLE_BRANCH:8}
+              export GC_NETLIFY_DOMAIN=www.xeodevelop.com
+            elif [[ $CIRCLE_BRANCH == "testing"* ]]; then
+              NETLIFY_PATH=/${CIRCLE_BRANCH:8}
+              export GC_NETLIFY_DOMAIN=www.xeotesting.com
+            elif [[ $CIRCLE_BRANCH == "staging"* ]]; then
+              NETLIFY_PATH=/${CIRCLE_BRANCH:8}
+              export GC_NETLIFY_DOMAIN=www.xeostaging.com
+            elif [[ $CIRCLE_BRANCH == "beta"* ]]; then
+              export GC_NETLIFY_DOMAIN=www.xeopreview.com
+            elif [[ $CIRCLE_BRANCH == "master"* ]]; then
+              CIRCLE_BRANCH=master
+              export GC_NETLIFY_DOMAIN=www.xeoclient.com
+            else
+              echo "UNKNOWN BRANCH PREFIX"
+              exit 0
+            fi
+            export GC_NETLIFY_SUBDOMAIN=$CIRCLE_BRANCH
+            npx netlify-deploy --dir=xeo --remote=$NETLIFY_PATH/xeo

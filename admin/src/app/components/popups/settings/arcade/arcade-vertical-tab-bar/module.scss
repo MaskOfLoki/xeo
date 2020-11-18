@@ -1,0 +1,43 @@
+.verticalTabBar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+    color: white;
+    width: fit-content;
+    white-space: nowrap;
+    margin-bottom: 1.5vw;
+    width: 70%;
+  }
+
+  .verticalTab {
+    width: 70%;
+    font-size: 0.8vw;
+    margin-bottom: 0.5vw;
+
+    &.premium {
+      position: relative;
+
+      &:after {
+        content: "★";
+        position: absolute;
+        top: 2%;
+        left: 5%;
+        font-size: 1vw;
+      }
+    }
+
+    &.disabled {
+      border-color: grey;
+      color: grey;
+      pointer-events: none;
+    }
+  }
+}

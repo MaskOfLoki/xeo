@@ -1,0 +1,67 @@
+$reactionSolidColor1: #ff0d8f;
+$reactionSolidColor1Opacity50: #ff0d8f7f;
+
+@function reactionLinearGradientColor1($percentage: 100%) {
+  @return linear-gradient(to bottom, #390b26, #d50083 $percentage);
+}
+
+$reactionLinearGradientColor1ForEditPopup: #390b26;
+
+$reactionSolidColor2: #00ffd7;
+
+$targetCardSolidColor: #29e2ff;
+
+@function reactionLinearGradientColor2($percentage: 100%) {
+  @return linear-gradient(to bottom, #003434, #00a088 $percentage);
+}
+
+$reactionSolidColor3: #c14bff;
+@function reactionLinearGradientColor3($percentage: 100%) {
+  @return linear-gradient(to bottom, #200038, #6900a0 $percentage);
+}
+
+$reactionSolidColor4: #ffa700;
+@function reactionLinearGradientColor4($percentage: 100%) {
+  @return linear-gradient(to bottom, #4b3300, #dda900 $percentage);
+}
+
+@function targetCardLinearGradientColor() {
+  @return linear-gradient(to bottom, #013046, #084f66);
+}
+
+$reactionLinearGradientColor4: linear-gradient(to bottom, rgb(57, 11, 38) 100%, rgba(213, 0, 131, 1) 100%);
+
+$liveModeSolidColor: #00e674;
+$liveModeLinearGradientColor: linear-gradient(to bottom, rgba(57, 11, 38, 1) 100%, rgba(213, 0, 131, 1) 100%);
+
+$globalSolidColor: #21abfc;
+$globalSolidColorOpacity50: #21abfc7f;
+$globalLinearGradientColorToRight: linear-gradient(to right, #21abfc, #00578b);
+
+$neutralColor1: #ffffff;
+$neutralColor2: #c1c1c1;
+$neutralColor3: #6f6f74;
+$neutralColor4: #383841;
+$neutralColor5: #212230;
+$neutralColor5Opacity50: #2122307f;
+$neutralColor5Opacity80: #212230df;
+$neutralColor6: #1a1a29;
+$neutralColor7: #13131d;
+$neutralColor7Opacity35: #12131d59;
+$neutralColor8: #000000;
+$neutralColor9: #1a192a;
+$neutralColor9Opacity50: #1a192a7f;
+$neutralColor10: #707070;
+
+$gradient1: linear-gradient(to bottom, #84e3ff, #000000);
+$gradient2: linear-gradient(to bottom, #6bc4fc, #000000);
+$gradient3: linear-gradient(to bottom, #369ef8, #000000);
+$gradient4: linear-gradient(to bottom, #354657, #171c27);
+$gradient5: linear-gradient(to right, #fc213a, #8b0000);
+$gradient6: linear-gradient(to right, #01ECFC, #002AD8);
+
+$borderWidth: 0.08vw;
+$buttonHeight: 1.8vw;
+$inputHeight: 1.6vw;
+
+$inputControlColor: #01ECFC;

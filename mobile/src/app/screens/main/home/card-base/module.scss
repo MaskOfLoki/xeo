@@ -1,0 +1,63 @@
+.baseScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fadeIn {
+    opacity: 0;
+    animation: fade-in 0.5s forwards;
+}
+
+.fadeOut {
+    opacity: 1;
+    animation: fade-out 0.5s forwards;
+}
+
+.slideIn {
+    left: 100%;
+    animation: slide-in 0.5s forwards;
+}
+
+.slideOut {
+    left: 0;
+    animation: slide-out 0.5s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}

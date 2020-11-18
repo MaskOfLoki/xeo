@@ -1,0 +1,73 @@
+@import '../../../utils/module';
+
+.feedbar {
+  width: 100%;
+  font-size: 10vmin;
+  height: $liveBarHeightPortrait;
+  display: flex;
+  background: #0b133e;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+  border: 1px solid;
+
+  .logo {
+    height: 100%;
+    width: 1.2em;
+    margin-left: 0.1em;
+
+    mask: url('../../../../assets/images/icons/smiley.svg') no-repeat center;
+    mask-size: 80% 80%;
+  }
+
+  .actions {
+    position: relative;
+    height: 100%;
+    width: calc(100% - 0.7em);
+    background-color: red($color: #000000);
+    overflow: hidden;
+
+    .action {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      left: 100%;
+      top: 2.5%;
+      height: 95%;
+      width: 90%;
+      animation: scroll 4s linear;
+
+      .icon {
+        height: 100%;
+        width: 10vmin;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        font-weight: bold;
+        margin-right: 2vmin;
+      }
+
+      .text {
+        font-size: 0.5em;
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  to {
+    left: -100%;
+  }
+}
+
+@media (min-aspect-ratio: 1/1) {
+  .feedbar {
+    height: $liveBarHeightLandscape;
+
+    .actions .action .icon {
+      height: 90%;
+    }
+  }
+}

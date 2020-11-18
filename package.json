@@ -1,0 +1,48 @@
+{
+  "name": "xeo",
+  "version": "1.0.0",
+  "repository": "https://github.com/GameChangerInteractive/xeo.git",
+  "author": "Nikolay Glushchenko <nick@nickalie.com>",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"yarn dev:admin\" \"yarn dev:mainboard\" \"yarn dev:mobile\" \"yarn dev:sound-mixer\" \"yarn dev:actionboard\"",
+    "dev:admin": "cd admin && yarn dev",
+    "dev:mainboard": "cd mainboard && yarn dev",
+    "dev:mobile": "cd mobile && yarn dev",
+    "dev:sound-mixer": "cd sound-mixer && yarn dev",
+    "dev:actionboard": "cd actionboard && yarn dev",
+    "lint": "concurrently --kill-others-on-fail \"yarn lint:common\" \"yarn lint:admin\" \"yarn lint:mainboard\" \"yarn lint:mobile\" \"yarn lint:sound-mixer\" \"yarn lint:actionboard\"",
+    "lint:admin": "cd admin && yarn lint",
+    "lint:mainboard": "cd mainboard && yarn lint",
+    "lint:mobile": "cd mobile && yarn lint",
+    "lint:sound-mixer": "cd sound-mixer && yarn lint",
+    "lint:actionboard": "cd actionboard && yarn lint",
+    "lint:common": "cd common && yarn lint",
+    "build": "yarn build:admin && yarn build:mainboard && yarn build:mobile && yarn build:sound-mixer && yarn build:actionboard",
+    "build:admin": "cd admin && yarn build",
+    "build:mainboard": "cd mainboard && yarn build",
+    "build:mobile": "cd mobile && yarn build",
+    "build:sound-mixer": "cd sound-mixer && yarn build",
+    "build:actionboard": "cd actionboard && yarn build",
+    "postinstall": "yarn install:common && yarn install:admin && yarn install:mainboard && yarn install:mobile && yarn install:sound-mixer && yarn install:actionboard",
+    "install:admin": "cd admin && yarn",
+    "install:mainboard": "cd mainboard && yarn",
+    "install:mobile": "cd mobile && yarn",
+    "install:sound-mixer": "cd sound-mixer && yarn",
+    "install:actionboard": "cd actionboard && yarn",
+    "install:common": "cd common && yarn"
+  },
+  "devDependencies": {
+    "@gamechangerinteractive/netlify-deploy": "1.0.46",
+    "concurrently": "^5.3.0",
+    "husky": "^4.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "dependencies": {
+    "jszip": "^3.5.0"
+  }
+}

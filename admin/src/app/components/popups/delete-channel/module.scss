@@ -1,0 +1,198 @@
+@import '../../../utils/colors.scss';
+@import '../../../utils/index.scss';
+
+.popup {
+  width: 40vw;
+  height: 30vw;
+  background-image: $gradient4;
+  border-radius: 0.4vw;
+
+  .space {
+    margin: 0 auto;
+  }
+
+  .headerText {
+    height: 12.5%;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+
+    .headerTitle {
+      color: white;
+      font-size: 0.8vw;
+      text-align: center;
+      font-weight: bold;
+      margin-left: 10%;
+      width: 80%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .closeButton {
+      @extend .button;
+      margin-top: 2.5%;
+      margin-right: 3.5%;
+      width: 3%;
+      height: 1.5vw;
+      background: url('../../../../assets/images/icons/close.svg') no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  .mainContainer {
+    width: 85%;
+    height: 72.5%;
+    margin-left: 7.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+      color: white;
+      font-size: 0.7vw;
+      margin-bottom: 0.5vw;
+      text-align: center;
+    }
+
+    .channelList {
+      width: 90%;
+      height: 70%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 2.5%;
+
+      .channelItem {
+        width: 27.5%;
+        height: 40%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .channelName {
+          @extend .button;
+          width: 95%;
+          height: 90%;
+          background: linear-gradient(to bottom, #007230, #00c161);
+          border-radius: 0.5vw;
+          margin-bottom: 0.5vw;
+          color: white;
+          font-size: 0.8vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .remainingDates {
+          color: white;
+          font-size: 0.7vw;
+        }
+
+        &.programmed {
+          .channelName {
+            background: linear-gradient(to bottom, #00578b, $globalSolidColor);
+          }
+        }
+
+        &.selected {
+          .channelName {
+            border: 0.2vw solid white;
+            box-shadow: inset 0 0 0vw 30vw #ffffff3f;
+          }
+        }
+      }
+    }
+
+    .pagination {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      justify-content: center;
+      .paginationBtn {
+        @extend .button;
+        width: 1vw;
+        height: 1vw;
+        margin-right: 1.25vw;
+        background: $neutralColor4;
+        border-radius: 50%;
+        &.selected {
+          background: $globalSolidColor;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .deletedChannel {
+      width: 35%;
+      height: 6.5vw;
+      background: linear-gradient(to bottom, #007230, #00c161);
+      border-radius: 0.5vw;
+      margin-bottom: 1vw;
+      color: white;
+      font-size: 0.8vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.programmed {
+        background: linear-gradient(to bottom, #00578b, $globalSolidColor);
+      }
+    }
+
+    .deleteTitle {
+      @extend .title;
+      font-size: 0.8vw;
+    }
+  }
+
+  .controls {
+    width: 75%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      height: 1.75vw;
+      font-weight: bold;
+      padding-left: 1.25vw;
+      padding-right: 1.25vw;
+      font-size: 0.6vw;
+      width: auto;
+
+      &.disable {
+        opacity: 0.6;
+        pointer-events: none;
+      }
+    }
+
+    .restore {
+      @extend .button;
+      margin-right: 5%;
+      background: $globalLinearGradientColorToRight;
+    }
+
+    .confirm {
+      @extend .button;
+      background: #e02f2f;
+    }
+
+    .cancel {
+      @extend .button;
+      margin-right: 5%;
+      border: $globalSolidColor 0.15vw solid;
+      background-color: transparent;
+    }
+  }
+}

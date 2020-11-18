@@ -1,0 +1,25 @@
+.popup {
+  width: 80%;
+  background: black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 5vmin;
+
+  .message {
+    text-align: center;
+    font-size: 3vmin;
+    color: whitesmoke;
+    margin-top: 5vmin;
+  }
+
+  .button_container {
+    padding-top: 10vmin;
+    padding-bottom: 10vmin;
+
+    .button {
+      margin: 0 auto;
+      width: 40%;
+    }
+  }
+}

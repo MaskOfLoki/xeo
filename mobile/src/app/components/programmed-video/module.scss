@@ -1,0 +1,45 @@
+.control {
+  position: relative;
+
+  .video {
+    width: 100%;
+    height: 100%;
+
+    & > iframe {
+      height: 100%;
+    }
+  }
+
+  @mixin button() {
+    position: absolute;
+    background: no-repeat center;
+    background-size: contain;
+    width: 5vw;
+    height: 5vw;
+    bottom: 1vw;
+    cursor: pointer;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .pause {
+    @include button();
+    background-image: url('../../../assets/images/icons/pause.svg');
+    left: 1vw;
+  }
+
+  .sound {
+    @include button();
+    right: 1vw;
+    
+    &.unmute {
+      background-image: url('../../../assets/images/icons/mute.svg');
+    }
+
+    &.mute {
+      background-image: url('../../../assets/images/icons/unmute.svg');
+    }
+  }
+}

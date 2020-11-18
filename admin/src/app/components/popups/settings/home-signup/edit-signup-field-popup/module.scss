@@ -1,0 +1,118 @@
+@import '../../../../../utils/colors.scss';
+@import '../../../../../utils/index.scss';
+
+.popup {
+  @extend .column;
+  align-items: center;
+  width: 25%;
+  height: 65%;
+  border-radius: 1vw;
+  overflow: hidden;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  background: $neutralColor7;
+
+  .closeButton {
+    width: 1.3vw;
+    height: 1.3vw;
+    background: url('../../../../../../assets/images/icons/close.svg') no-repeat center;
+    background-size: contain;
+    margin-left: auto;
+    margin-top: 1vw;
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .title {
+    color: white;
+    font-size: 1.5vw;
+    margin-bottom: 1vw;
+  }
+
+  .groupButtons {
+    @extend .row;
+    margin-bottom: 1vw;
+
+    button {
+      font-size: 1vw;
+      width: 8vw;
+      height: auto;
+      padding: 0.5vw 1vw;
+      margin-left: 1vw;
+    }
+  }
+
+  .groupChoices {
+    @extend .column;
+    width: 100%;
+    margin-top: 1vw;
+
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .header {
+      @extend .row;
+      align-items: center;
+      font-size: 1vw;
+      color: white;
+      margin-bottom: 0.5vw;
+
+      button {
+        margin-left: 0.5vw;
+        font-size: 1.5vw;
+        display: flex;
+        align-items: center;
+        border: none;
+        width: 2vw;
+        color: $globalSolidColor;
+      }
+    }
+
+    .row {
+      .labelIndex {
+        color: white;
+        margin-right: 0.5vw;
+        font-size: 1vw;
+        margin-top: 0.2vw;
+        margin-bottom: 2vw;
+      }
+
+      button {
+        margin-left: 0.5vw;
+        font-size: 1.5vw;
+        display: flex;
+        align-items: center;
+        border: none;
+        width: 2vw;
+        color: $globalSolidColor;
+        outline: none;
+
+        &.deleteButton {
+          background-color: $globalSolidColor;
+          mask: url('../../../../../../assets/images/icons/trash.svg') no-repeat center;
+          mask-size: 50% 50%;
+        }
+      }
+
+      .spacer {
+        width: 2.53vw;
+      }
+    }
+  }
+
+  .buttonSave {
+    font-size: 1.2vw;
+    margin-top: auto;
+    margin-bottom: 1vw;
+  }
+}

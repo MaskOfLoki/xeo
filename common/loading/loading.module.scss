@@ -1,0 +1,10 @@
+.overlay {
+  position: absolute;
+  cursor: progress;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: 0);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}

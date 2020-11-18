@@ -1,0 +1,15 @@
+<svg id="Split_Screen_Icon" data-name="Split Screen Icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="71" height="98" viewBox="0 0 71 98">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1155" data-name="Rectangle 1155" width="71" height="54" transform="translate(8028 -1978)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_33" data-name="Mask Group 33" transform="translate(-8028 2022)" clip-path="url(#clip-path)">
+    <rect id="Rectangle_1154" data-name="Rectangle 1154" width="48" height="87" rx="10" transform="translate(8039 -2022)" fill="#383841"/>
+  </g>
+  <g id="Rectangle_1156" data-name="Rectangle 1156" transform="translate(11)" fill="none" stroke="#c1c1c1" stroke-width="1">
+    <rect width="48" height="87" rx="10" stroke="none"/>
+    <rect x="0.5" y="0.5" width="47" height="86" rx="9.5" fill="none"/>
+  </g>
+  <line id="Line_140" data-name="Line 140" x2="47" transform="translate(11.5 43.5)" fill="none" stroke="#c1c1c1" stroke-width="1"/>
+</svg>

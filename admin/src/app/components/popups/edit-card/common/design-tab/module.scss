@@ -1,0 +1,67 @@
+@import '../../../../../utils/colors.scss';
+
+.designTab {
+  width: 100% !important;
+}
+
+.templateRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.templateSelect {
+  width: 50%;
+}
+
+.saveButton {
+  font-size: 0.75rem;
+  margin-left: 1rem;
+}
+
+.refreshButton {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.tableRow {
+  display: flex;
+  border-bottom: 1px solid $neutralColor10;
+  font-weight: 300;
+
+  .col {
+    padding: 1rem 1rem 1rem 0;
+    box-sizing: border-box;
+  }
+
+  .nameCol {
+    @extend .col;
+    width: 30%;
+  }
+  .colorCol {
+    @extend .col;
+    width: 20%;
+    border-right: 1px solid $neutralColor10;
+
+    > div > div {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  .imageCol {
+    @extend .col;
+    padding-left: 0.5rem;
+    padding-right: 0;
+    width: 50%;
+    display: flex;
+
+    > div:first-child {
+      margin-top: -0.5rem;
+      margin-right: 0.5rem;
+    }
+
+    .alignLeft > div {
+      justify-content: flex-start;
+    }
+  }
+}

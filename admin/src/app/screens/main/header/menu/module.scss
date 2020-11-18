@@ -1,0 +1,9 @@
+@import '../../../../utils/index.scss';
+
+.control {
+    @extend .button;
+    width: 5vw;
+    height: 40%;
+    background: url('../../../../../assets/images/icons/menu.svg') no-repeat center;
+    background-size: contain;
+}
